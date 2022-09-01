@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardCornerRadius="@dimen/_6sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:src="@drawable/ic_user"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Pooja"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="@dimen/_14ssp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_profile"
+                    app:layout_constraintStart_toStartOf="@+id/iv_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+
+                <TextView
+                    android:id="@+id/tv_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="12345678888888888ggggg"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="@dimen/_14ssp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_profile"
+                    app:layout_constraintStart_toStartOf="@+id/iv_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_name">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/money_spent"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="@dimen/_16ssp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        app:font="@{`bold`}"/>
+                    <TextView
+                        android:id="@+id/tv_money_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/money_spent"
+                        android:textColor="@color/text_color"
+                        android:gravity="center"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:font="@{`regular`}"/>
+
+
+                </LinearLayout>
+
+                                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/total_orders"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="@dimen/_16ssp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        app:font="@{`bold`}"/>
+                    <TextView
+                        android:id="@+id/tv_order_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/money_spent"
+                        android:textColor="@color/text_color"
+                        android:gravity="center"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        app:font="@{`regular`}"/>
+                                </LinearLayout>
+
+            </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

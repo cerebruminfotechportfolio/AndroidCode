@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_category_name"
+            style="@style/EditTextBackground"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:hint="@string/category_name"
+            android:padding="@dimen/_16sdp"
+            app:font="@{`regular`}"
+            app:layout_constraintEnd_toStartOf="@+id/tv_del"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_del"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/color_EB5757"
+            android:onClick="onDelete"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:text="@string/remove"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:font="@{`regular`}"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_category_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edt_category_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
