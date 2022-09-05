@@ -44,4 +44,41 @@
     <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
     </style>
+
+    <array name="filter_product_sort">
+        <item>All</item>
+        <item>Recently Added</item>
+        <item>Older to New</item>
+        <item>High Popularity</item>
+        <item>Low Popularity</item>
+        <item>Price High</item>
+        <item>Price Low</item>
+        <item>Rating High</item>
+        <item>Rating Low</item>
+
+    </array>
+
+    <array name="filter_product_item_type">
+        <item>All</item>
+        <item>Fresh</item>
+        <item>Veg</item>
+        <item>Non-Veg</item>
+        <item>Organic</item>
+        <item>Fresh</item>
+        <item>Allopathic</item>
+        <item>Homopathic</item>
+        <item>Stored</item>
+
+    </array>
+    <array name="product_tax">
+        <item>New Tax (2.5%)</item>
+        <item>Vat (5%)</item>
+    </array>
+
+    <style name="style_tab" parent="@android:style/TextAppearance">
+    <item name="android:fontFamily">@font/poppins_semibold</item>
+    <item name="android:textSize">@dimen/_16ssp</item>
+    <item name="android:singleLine">true</item>
+    </style>
+
 </resources>

@@ -8,12 +8,15 @@ import com.android.cerekartvendorapp.BR
 import com.android.cerekartvendorapp.R
 import com.android.cerekartvendorapp.callbacks.AdapterItemClickCallback
 import com.android.cerekartvendorapp.callbacks.PopupMenuClick
-import com.android.cerekartvendorapp.databinding.ItemRowProductCatalougeBinding
+import com.android.cerekartvendorapp.databinding.ItemRowSubCatProductBinding
 import com.android.cerekartvendorapp.modal.UserTypeModal
 import com.android.cerekartvendorapp.utils.UtilsFunctions
 
 
-class ProductCatalogueListAdapter(val callback: PopupMenuClick, val adapterItemClickCallback: AdapterItemClickCallback) :
+class SubCategoryProductListAdapter(
+    val callback: PopupMenuClick,
+    val adapterItemClickCallback: AdapterItemClickCallback
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var dataList = ArrayList<UserTypeModal>()
     private var rec: RecyclerView? = null
@@ -23,7 +26,7 @@ class ProductCatalogueListAdapter(val callback: PopupMenuClick, val adapterItemC
         return ViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
-                R.layout.item_row_product_catalouge, parent, false
+                R.layout.item_row_sub_cat_product, parent, false
             )
         )
     }
@@ -48,16 +51,16 @@ class ProductCatalogueListAdapter(val callback: PopupMenuClick, val adapterItemC
                         rec?.scrollToPosition(itemCount - 1)
                     } else
                         rec?.setPadding(0, 0, 0, 60)
-                    UtilsFunctions.showMenu(holder.binding.ivsetting, tagPos, callback)
+                    UtilsFunctions.showSubCatMenu(holder.binding.ivsetting, tagPos, true,callback)
                 }
-               // holder.bind(dataList[position])
+                // holder.bind(dataList[position])
             }
         }
     }
 
     override fun getItemCount(): Int {
-      return 10
-       /* return dataList.size*/
+        return 10
+        /* return dataList.size*/
 
     }
 
@@ -67,7 +70,7 @@ class ProductCatalogueListAdapter(val callback: PopupMenuClick, val adapterItemC
         notifyDataSetChanged()
     }
 
-    inner class ViewHolder(val binding: ItemRowProductCatalougeBinding) :
+    inner class ViewHolder(val binding: ItemRowSubCatProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: UserTypeModal) {
             binding.setVariable(BR.model, data)

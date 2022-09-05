@@ -67,7 +67,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.CanHub:Android-Image-Cropper:4.2.0'
-
+    implementation "com.github.skydoves:colorpickerview:2.2.4"
     //calender
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
 

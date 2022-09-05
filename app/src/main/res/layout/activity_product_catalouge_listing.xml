@@ -36,9 +36,21 @@
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_20ssp"
             app:font="@{`bold`}"
-            app:layout_constraintEnd_toEndOf="@+id/guide_end"
+            app:layout_constraintEnd_toStartOf="@+id/iv_add"
             app:layout_constraintStart_toStartOf="@+id/guide_begin"
             app:layout_constraintTop_toBottomOf="@id/topView" />
+
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_pluss"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_products"
+            app:layout_constraintEnd_toEndOf="@+id/guide_end"
+            app:layout_constraintTop_toTopOf="@+id/tv_products"/>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edt_search"
@@ -47,12 +59,69 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
             android:hint="@string/search"
-            android:padding="@dimen/_16sdp"
-            android:inputType="text"
             android:imeOptions="actionDone"
+            android:inputType="text"
+            android:padding="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@id/guide_end"
             app:layout_constraintStart_toStartOf="@id/guide_begin"
             app:layout_constraintTop_toBottomOf="@+id/tv_products" />
+
+       <LinearLayout
+           android:visibility="gone"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:id="@+id/lin_filter"
+           android:layout_marginTop="@dimen/_16sdp"
+           app:layout_constraintEnd_toEndOf="@+id/guide_end"
+           app:layout_constraintStart_toStartOf="@+id/guide_begin"
+           app:layout_constraintTop_toBottomOf="@id/edt_search" >
+
+           <TextView
+               android:id="@+id/tv_sort"
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content"
+               android:textSize="@dimen/_12ssp"
+               android:textColor="@color/black"
+               app:font="@{`regular`}"
+               android:maxLines="1"
+               android:ellipsize="end"
+               android:drawablePadding="@dimen/_10sdp"
+               android:drawableStart="@drawable/ic_nav_orders"
+               android:text="@string/sort"/>
+
+           <TextView
+               android:id="@+id/tv_item"
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content"
+               android:textSize="@dimen/_12ssp"
+               android:textColor="@color/black"
+               app:font="@{`regular`}"
+               android:maxLines="1"
+               android:ellipsize="end"
+               android:drawablePadding="@dimen/_10sdp"
+               android:drawableStart="@drawable/ic_nav_orders"
+               android:text="@string/item_type"/>
+
+
+           <TextView
+               android:id="@+id/tv_category"
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content"
+               android:textSize="@dimen/_12ssp"
+               android:textColor="@color/black"
+               app:font="@{`regular`}"
+               android:maxLines="1"
+               android:ellipsize="end"
+               android:drawablePadding="@dimen/_10sdp"
+               android:drawableStart="@drawable/ic_nav_orders"
+               android:text="@string/category"/>
+
+       </LinearLayout>
+
 
         <TextView
             android:id="@+id/tv_categories"
@@ -65,19 +134,20 @@
             app:font="@{`bold`}"
             app:layout_constraintEnd_toEndOf="@+id/guide_end"
             app:layout_constraintStart_toStartOf="@+id/guide_begin"
-            app:layout_constraintTop_toBottomOf="@id/edt_search" />
+            app:layout_constraintTop_toBottomOf="@id/lin_filter" />
 
         <androidx.recyclerview.widget.RecyclerView
 
-           android:id="@+id/rvproduct"
+            android:id="@+id/rvproduct"
+            recyclerViewTouch="@{`touch`}"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="@+id/guide_end"
             android:paddingBottom="@dimen/_30sdp"
-            recyclerViewTouch="@{`touch`}"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guide_end"
             app:layout_constraintStart_toStartOf="@+id/guide_begin"
             app:layout_constraintTop_toBottomOf="@id/tv_categories" />
+
         <include
             android:id="@+id/iv_no_data_found"
             layout="@layout/layout_no_record_found"

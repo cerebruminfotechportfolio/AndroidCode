@@ -38,6 +38,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/AllProductListAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/BindingAdapter.kt">
           <value>
             <set />
@@ -48,12 +53,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/CustomFragmentPagerAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/HomeTopUsersAdapter.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/ProductCatalogueListAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/ProductFilterAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/SubCategoryListAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/SubCategoryProductListAdapter.kt">
           <value>
             <set />
           </value>
@@ -103,12 +128,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/constants/IntentConstant.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/constants/PermissionConstants.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/customview/ChooseCameraGalleryBottomSheet.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/customview/ChooseFilterBottomSheet.kt">
           <value>
             <set />
           </value>
@@ -233,6 +268,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/coupons/CouponDealFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/home/HomeFragment.kt">
           <value>
             <set />
@@ -248,12 +288,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/AllProductListingActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/ProductCatalugeListingActivity.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/ProductsFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/SubCategoryListingActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/SubCategoryProductListingActivity.kt">
           <value>
             <set />
           </value>
@@ -283,7 +338,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_pluss.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/tab_indicator_selector_default.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/tab_indicator_selector_selected.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_add_sub_category.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_apply_tax.xml">
           <value>
             <set />
           </value>
@@ -318,6 +398,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_coupon_deal.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
           <value>
             <set />
@@ -333,6 +418,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_row_product_catalouge.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_row_products.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_row_sub_cat_product.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/item_row_top_user.xml">
           <value>
             <set />
@@ -344,6 +444,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_sheet_choose_gallery.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/layout_bottom_sheet_filter.xml">
           <value>
             <set />
           </value>
@@ -364,6 +469,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/popup_product_catalouge.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/popup_sub_category_option.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/row_item_filter_tag.xml">
           <value>
             <set />
           </value>
@@ -423,6 +538,11 @@
             <set />
           </value>
         </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/java/com/example/homeservices/model/cart/CartListResponse.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/java/com/example/homeservices/views/home/DashboardActivity.kt">
           <value>
             <set />
@@ -434,6 +554,16 @@
           </value>
         </entry>
         <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/res/layouts/activities/layout/common_toolbar.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-rider-app/app/src/main/java/com/cerebrum/rider/application/ForceUpdateAsync.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-rider-app/build.gradle">
           <value>
             <set />
           </value>

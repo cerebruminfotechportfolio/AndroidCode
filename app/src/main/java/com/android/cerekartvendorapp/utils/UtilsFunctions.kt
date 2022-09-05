@@ -97,7 +97,6 @@ object UtilsFunctions {
     }
 
 
-
     @JvmStatic
     fun changeOutputFormat(inputFormat: String, outputFormat: String, date: String): String {
         val input = SimpleDateFormat(inputFormat, Locale.getDefault())
@@ -112,6 +111,7 @@ object UtilsFunctions {
         }
         return date
     }
+
     @JvmStatic
     fun getTimeMills(inputFormat: String, date: String): Long? {
         val input = SimpleDateFormat(inputFormat, Locale.getDefault())
@@ -170,14 +170,78 @@ object UtilsFunctions {
     }
 
     @JvmStatic
-    fun getFormattedDate(milisec: Long,format:String): String {
-        if (DateUtils.isToday(milisec))
-            return "Today, " + getStringDate(milisec,DateConstants.HH_MM_AA)
-          return getStringDate(milisec,format)
+    fun showSubCatMenu(
+        view: View,
+        pos: Int,
+        fromProduct: Boolean = false,
+        callback: PopupMenuClick
+    ) {
+        val viewGroup = view.findViewById<ConstraintLayout>(R.id.main_view)
+        val layoutInflater =
+            (view.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
+        val layout: View =
+            layoutInflater.inflate(R.layout.popup_sub_category_option, viewGroup)
+        val popup = PopupWindow(view.context)
+        popup.contentView = layout
+        popup.setBackgroundDrawable(ColorDrawable())
+        popup.width = LinearLayout.LayoutParams.WRAP_CONTENT
+        popup.height = LinearLayout.LayoutParams.WRAP_CONTENT
+        popup.isOutsideTouchable = true
+        popup.isFocusable = true
+
+        val tvOptionOne = layout.findViewById<TextView>(R.id.tv_add_product)
+        val tvOptionTwo = layout.findViewById<TextView>(R.id.tv_edit)
+        val tvOptionThree = layout.findViewById<TextView>(R.id.tv_disable)
+        val tvOptionfour = layout.findViewById<TextView>(R.id.tv_delete)
+        var popPos = -1
+        if (fromProduct) {
+          tvOptionOne.visibility=View.GONE
+        }
+        tvOptionOne.setOnClickListener {
+            popup.dismiss()
+            popPos = 0
+            callback.onSelect(popPos, pos)
+
+        }
+        tvOptionTwo.setOnClickListener {
+            popup.dismiss()
+            popPos = 1
+            callback.onSelect(popPos, pos)
+
+        }
+        tvOptionThree.setOnClickListener {
+            popup.dismiss()
+            popPos = 2
+            callback.onSelect(popPos, pos)
+
+        }
+        tvOptionfour.setOnClickListener {
+            popup.dismiss()
+            popPos = 3
+            callback.onSelect(popPos, pos)
+
+        }
+        popup.setTouchInterceptor { v: View?, event: MotionEvent ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                callback.onSelect(popPos, pos)
+                // popup.dismiss()
+                // return@setTouchInterceptor true
+            }
+            false
+        }
+        popup.animationStyle = R.style.popupWindowAnim
+        popup.showAsDropDown(view, -200, -40)
+
     }
 
-     fun getStringDate(milisec: Long,format:String):String
-    {
+    @JvmStatic
+    fun getFormattedDate(milisec: Long, format: String): String {
+        if (DateUtils.isToday(milisec))
+            return "Today, " + getStringDate(milisec, DateConstants.HH_MM_AA)
+        return getStringDate(milisec, format)
+    }
+
+    fun getStringDate(milisec: Long, format: String): String {
         val inputFormat = SimpleDateFormat(format, Locale.getDefault())
         return inputFormat.format(milisec)
     }

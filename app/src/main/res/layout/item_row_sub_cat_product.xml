@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-       android:id="@+id/main_item"
+       android:id="@+id/mainItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_16sdp"
@@ -12,15 +13,14 @@
 
         <ImageView
             android:id="@+id/iv_profile"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:src="@drawable/ic_user"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-
         <LinearLayout
+            android:id="@+id/lin_name"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -39,7 +39,7 @@
                     android:layout_weight="1.9"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/money_spent"
+                    tools:text="@string/money_spent"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16ssp"
                     app:font="@{`bold`}" />
@@ -54,6 +54,24 @@
 
         </LinearLayout>
 
+        <RatingBar
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:id="@+id/rating"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lin_name" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:font="@{`regular`}"
+            tools:text="Rs.30"
+            app:layout_constraintStart_toStartOf="@id/rating"
+            app:layout_constraintEnd_toEndOf="@+id/rating"
+            app:layout_constraintTop_toBottomOf="@+id/rating"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout></layout>

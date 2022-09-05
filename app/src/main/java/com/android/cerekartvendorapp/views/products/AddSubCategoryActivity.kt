@@ -20,6 +20,8 @@ import com.bumptech.glide.Glide
 import com.canhub.cropper.CropImageContract
 import com.canhub.cropper.CropImageView
 import com.canhub.cropper.options
+import com.skydoves.colorpickerview.ColorPickerDialog
+import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener
 
 
 class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), View.OnClickListener,
@@ -82,6 +84,7 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
         mBinding.topView.imgeNavigation.setOnClickListener(this)
         mBinding.tvAddMore.setOnClickListener(this)
         mBinding.tvUploadImage.setOnClickListener(this)
+        mBinding.linColour.setOnClickListener(this)
         permissionHelper.setListener(this)
     }
 
@@ -89,6 +92,9 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
         when (p0) {
             mBinding.topView.imgeNavigation -> {
                 finish()
+            }
+            mBinding.linColour -> {
+                selectColour()
             }
             mBinding.tvAddMore -> {
                 if (i == 8)
@@ -199,5 +205,22 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
             captureFileUri = UtilsFunctions.captureFile(this)
             captureFileUri?.let { UtilsFunctions.openCamera(this, it) }
         }
+    }
+
+    private fun selectColour() {
+        ColorPickerDialog.Builder(this)
+            .setTitle("ColorPicker Dialog")
+            .setPreferenceName("MyColorPickerDialog")
+            .setPositiveButton(getString(R.string.ok),
+                ColorEnvelopeListener { envelope, fromUser ->
+                    mBinding.tvColorSelected.setBackgroundColor(envelope.color)
+                })
+            .setNegativeButton(
+                getString(R.string.cancel)
+            ) { dialogInterface, i -> dialogInterface.dismiss() }
+            .attachAlphaSlideBar(true) // the default value is true.
+            .attachBrightnessSlideBar(true) // the default value is true.
+            .setBottomSpace(12) // set a bottom space between the last slidebar and buttons.
+            .show()
     }
 }

@@ -8,7 +8,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.cerekartvendorapp.R
-import com.android.cerekartvendorapp.adapters.ProductCatalogueListAdapter
+import com.android.cerekartvendorapp.adapters.SubCategoryListAdapter
 import com.android.cerekartvendorapp.callbacks.AdapterItemClickCallback
 import com.android.cerekartvendorapp.callbacks.PopupMenuClick
 import com.android.cerekartvendorapp.callbacks.TextWatcherCallback
@@ -19,9 +19,9 @@ import com.android.cerekartvendorapp.viewmodel.ForgotPasswordViewModel
 import com.android.cerekartvendorapp.views.base.BaseActivity
 
 
-class ProductCatalugeListingActivity : BaseActivity<ActivityProductCatalougeListingBinding>(), View.OnClickListener,
+class SubCategoryListingActivity : BaseActivity<ActivityProductCatalougeListingBinding>(), View.OnClickListener,
     PopupMenuClick, AdapterItemClickCallback {
-    private lateinit var mAdapter: ProductCatalogueListAdapter
+    private lateinit var mAdapter: SubCategoryListAdapter
     private  var searchKey: String?=null
     private lateinit var mBinding: ActivityProductCatalougeListingBinding
     private val mViewModel by lazy { ViewModelProvider(this)[ForgotPasswordViewModel::class.java] }
@@ -33,13 +33,20 @@ class ProductCatalugeListingActivity : BaseActivity<ActivityProductCatalougeList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = getViewDataBinding()
+        getIntentData()
         setClickListeners()
         setUpData()
         setObserver()
         initRecyclerView()
     }
+
+    private fun getIntentData() {
+        intent?.getStringExtra(IntentConstant.key_cat_name)
+        intent?.getStringExtra(IntentConstant.key_cat_name)
+    }
+
     private fun initRecyclerView() {
-        mAdapter = ProductCatalogueListAdapter(this,this)
+        mAdapter = SubCategoryListAdapter(this,this)
         val layoutRecManager = LinearLayoutManager(this)
         mBinding.rvproduct.apply {
             layoutManager = layoutRecManager
@@ -104,7 +111,7 @@ class ProductCatalugeListingActivity : BaseActivity<ActivityProductCatalougeList
     }
 
     override fun onItemSelect(pos: Int) {
-        val intent=Intent(this,SubCategoryListingActivity::class.java)
+       val intent=Intent(this,SubCategoryProductListingActivity::class.java)
         intent.apply {
             putExtra(IntentConstant.key_cat_id,"")
             putExtra(IntentConstant.key_cat_name,"")

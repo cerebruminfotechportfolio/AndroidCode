@@ -13,7 +13,10 @@ import com.android.cerekartvendorapp.modal.UserTypeModal
 import com.android.cerekartvendorapp.utils.UtilsFunctions
 
 
-class ProductCatalogueListAdapter(val callback: PopupMenuClick, val adapterItemClickCallback: AdapterItemClickCallback) :
+class SubCategoryListAdapter(
+    val callback: PopupMenuClick,
+    val adapterItemClickCallback: AdapterItemClickCallback
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var dataList = ArrayList<UserTypeModal>()
     private var rec: RecyclerView? = null
@@ -48,16 +51,16 @@ class ProductCatalogueListAdapter(val callback: PopupMenuClick, val adapterItemC
                         rec?.scrollToPosition(itemCount - 1)
                     } else
                         rec?.setPadding(0, 0, 0, 60)
-                    UtilsFunctions.showMenu(holder.binding.ivsetting, tagPos, callback)
+                    UtilsFunctions.showSubCatMenu(holder.binding.ivsetting, tagPos,false, callback)
                 }
-               // holder.bind(dataList[position])
+                // holder.bind(dataList[position])
             }
         }
     }
 
     override fun getItemCount(): Int {
-      return 10
-       /* return dataList.size*/
+        return 10
+        /* return dataList.size*/
 
     }
 

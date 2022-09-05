@@ -15,113 +15,176 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topView"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topView">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="@dimen/_20sdp">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guide_begin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_begin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_16sdp" />
 
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guide_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/_16sdp" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_16sdp" />
 
-        <TextView
-            android:id="@+id/tv_products"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:text="@string/add_sub_category"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_20ssp"
-            app:font="@{`bold`}"
-            app:layout_constraintEnd_toEndOf="@+id/guide_end"
-            app:layout_constraintStart_toStartOf="@+id/guide_begin"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/tv_add_more"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:background="@color/colorPrimary"
-            android:drawableStart="@drawable/ic_plus"
-            android:drawablePadding="@dimen/_10sdp"
-            android:drawableTint="@color/white"
-            android:padding="@dimen/_12sdp"
-            android:text="@string/add_more"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_14ssp"
-            app:font="@{`bold`}"
-            app:layout_constraintEnd_toEndOf="@+id/guide_end"
-            app:layout_constraintTop_toBottomOf="@id/tv_products" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edt_category_name"
-            style="@style/EditTextBackground"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:hint="@string/category_name"
-            android:inputType="textCapSentences"
-            android:maxLength="100"
-            android:padding="@dimen/_16sdp"
-            app:layout_constraintEnd_toEndOf="@id/guide_end"
-            app:layout_constraintStart_toStartOf="@id/guide_begin"
-            app:layout_constraintTop_toBottomOf="@+id/tv_add_more" />
-
-        <LinearLayout
-            android:id="@+id/parent_linear_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="@id/guide_end"
-            app:layout_constraintStart_toStartOf="@id/guide_begin"
-            app:layout_constraintTop_toBottomOf="@+id/edt_category_name" />
+                <TextView
+                    android:id="@+id/tv_products"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/add_sub_category"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_20ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-          <RelativeLayout
-              android:id="@+id/rel_upload"
-              android:layout_width="0dp"
-              android:layout_height="@dimen/_200sdp"
-              app:layout_constraintEnd_toEndOf="@id/guide_end"
-              android:layout_marginTop="@dimen/_16sdp"
-             android:background="@drawable/edittext_round_background"
-              app:layout_constraintStart_toStartOf="@id/guide_begin"
-              app:layout_constraintTop_toBottomOf="@+id/parent_linear_layout">
+                <TextView
+                    android:id="@+id/tv_add_more"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_plus"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:drawableTint="@color/white"
+                    android:padding="@dimen/_12sdp"
+                    android:text="@string/add_more"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintTop_toBottomOf="@id/tv_products" />
 
-            <TextView
-                android:id="@+id/tv_upload_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_14ssp"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:text="@string/upload_image"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_category_name"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_24sdp"
+                    android:hint="@string/category_name"
+                    android:inputType="textCapSentences"
+                    android:maxLength="100"
+                    android:padding="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_add_more" />
 
-              <ImageView
-                  android:id="@+id/iv_cat"
-                  android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:id="@+id/parent_linear_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_category_name" />
 
-          </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_color_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/colour_code"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@id/parent_linear_layout" />
+
+                <LinearLayout
+                    android:id="@+id/linColour"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/edittext_round_background"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_color_code">
+
+                    <TextView
+                        android:id="@+id/tvColorSelected"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_12sdp"
+                        android:background="@color/black" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_cat_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/category_image"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@id/linColour" />
+                <RelativeLayout
+                    android:id="@+id/rel_upload"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/edittext_round_background"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cat_image">
+
+                    <TextView
+                        android:id="@+id/tv_upload_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/ic_settings"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/upload_image"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <ImageView
+                        android:id="@+id/iv_cat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_dark_primary"
+                    android:elevation="@dimen/_3sdp"
+                    app:font="@{`bold`}"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/rel_upload"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

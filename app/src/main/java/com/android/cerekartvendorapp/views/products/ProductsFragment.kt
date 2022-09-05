@@ -24,9 +24,8 @@ class ProductsFragment : BaseFragment<FragmentProductBinding>(), View.OnClickLis
     private fun setClickListeners() {
         mBinding.tvAddOns.setOnClickListener(this)
         mBinding.tvProductsCatalouge.setOnClickListener(this)
+        mBinding.tvAllProducts.setOnClickListener(this)
     }
-
-
 
 
     override fun onClick(p0: View?) {
@@ -34,12 +33,10 @@ class ProductsFragment : BaseFragment<FragmentProductBinding>(), View.OnClickLis
             mBinding.tvProductsCatalouge -> {
                 startActivity(Intent(requireActivity(),ProductCatalugeListingActivity::class.java))
             }
+            mBinding.tvAllProducts -> {
+                startActivity(Intent(requireActivity(),AllProductListingActivity::class.java))
+            }
 
         }
     }
-
-
-
-
-
 }

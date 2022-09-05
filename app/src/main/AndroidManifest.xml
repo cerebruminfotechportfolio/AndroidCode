@@ -51,6 +51,11 @@
             android:exported="false"/>
         <activity android:name=".views.products.AddSubCategoryActivity"
             android:exported="false"/>
+        <activity android:name=".views.products.SubCategoryListingActivity" android:exported="false"/>
+        <activity android:name=".views.products.SubCategoryProductListingActivity"
+            android:exported="false"/>
+        <activity android:name=".views.products.AllProductListingActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

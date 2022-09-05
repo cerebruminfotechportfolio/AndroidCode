@@ -11,6 +11,7 @@ import com.android.cerekartvendorapp.R
 import com.android.cerekartvendorapp.constants.AppConstants
 import com.android.cerekartvendorapp.databinding.ActivityLandingBinding
 import com.android.cerekartvendorapp.views.base.BaseActivity
+import com.android.cerekartvendorapp.views.coupons.CouponDealFragment
 import com.android.cerekartvendorapp.views.products.ProductsFragment
 import com.bumptech.glide.Glide
 import com.google.android.material.navigation.NavigationView
@@ -36,6 +37,7 @@ class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClick
     private fun setClickListeners() {
         mBinding.rlTop.setOnClickListener(this)
         mBinding.linProducts.setOnClickListener(this)
+        mBinding.linOffers.setOnClickListener(this)
         mBinding.imgNavCancel.setOnClickListener(this)
         mBinding.topView.imgeNavigation.setOnClickListener(this)
     }
@@ -87,6 +89,18 @@ class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClick
             }
             mBinding.linProducts -> {
                 val fragment = ProductsFragment()
+
+                mBinding.drawerLayout.closeDrawers()
+                this.callFragments(
+                    fragment,
+                    supportFragmentManager,
+                    false,
+                    AppConstants.SEND_DATA,
+                    ""
+                )
+            }
+            mBinding.linOffers -> {
+                val fragment = CouponDealFragment()
 
                 mBinding.drawerLayout.closeDrawers()
                 this.callFragments(
