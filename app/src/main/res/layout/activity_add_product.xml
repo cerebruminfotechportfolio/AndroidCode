@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="model"
+        type="com.android.cerekartvendorapp.viewmodel.AddProductViewModel" />
+</data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        app:hideKeyBoardOnClick="@{`back`}">
+
+        <include
+            android:id="@+id/topView"
+            layout="@layout/home_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_20sdp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_begin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/tv_products"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/add_product"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_24ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_general"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/bread"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_18ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_products" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/const_stock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_general">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_stock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_stock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:gravity="center"
+                        android:text="@string/stock_management"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toEndOf="@+id/switch_stock"
+                        app:layout_constraintTop_toTopOf="@+id/switch_stock" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_product_quantity"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                   android:visibility="gone"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/product_quantity"
+                    android:inputType="number"
+                   android:text="@{model.mProdQuantity}"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:nextFocusForward="@id/edt_product_name"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/const_stock" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_product_name"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/product_name"
+                    android:imeOptions="actionDone"
+                    android:text="@{model.mProdName}"
+                    android:inputType="textCapSentences"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_product_quantity" />
+
+
+                <TextView
+                    android:id="@+id/tv_item_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/item_type"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_16ssp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_product_name" />
+
+                <RadioGroup
+                    android:id="@+id/radiogroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_item_type">
+
+                    <RadioButton
+                        android:id="@+id/radioOne"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/veg"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_14ssp"
+                        app:font="@{`regular`}" />
+
+                    <RadioButton
+                        android:id="@+id/radioTwo"
+                        android:imeOptions="actionDone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/non_veg"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_14ssp"
+                        app:font="@{`regular`}" />
+
+                </RadioGroup>
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_desc"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="top"
+                    android:hint="@string/product_description"
+                    android:imeOptions="actionDone"
+                    android:lines="4"
+                    android:text="@{model.mProdDesc}"
+                    android:maxLength="250"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/radiogroup" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_unit_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/edittext_round_background"
+                    android:padding="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_desc">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_unit_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/black" />
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_duration"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/duration"
+                    android:inputType="number"
+                    android:text="@{model.mDuration}"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:nextFocusForward="@id/edt_price"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/rl_unit_type" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_price"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/price"
+                    android:text="@{model.mPrice}"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:nextFocusForward="@id/edt_included_service"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_duration" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_included_service"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="top"
+                    android:hint="@string/included_services"
+                    android:lines="4"
+                    android:maxLength="250"
+                    android:nextFocusForward="@id/edt_excluded_service"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_price" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_excluded_service"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:gravity="top"
+                    android:hint="@string/excluded_services"
+                    android:imeOptions="actionDone"
+                    android:lines="4"
+                    android:maxLength="250"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_included_service" />
+
+
+                <TextView
+                    android:id="@+id/tv_media_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/product_image"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@id/edt_excluded_service" />
+
+                <RelativeLayout
+                    android:id="@+id/rel_upload"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/edittext_round_background"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_media_info">
+
+                    <TextView
+                        android:id="@+id/tv_upload_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableTop="@drawable/ic_settings"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/upload"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <ImageView
+                        android:id="@+id/iv_cat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_offer_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/offer_description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@id/rel_upload" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_offer_perc"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:hint="@string/offer"
+                    android:inputType="numberDecimal"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:nextFocusForward="@id/edt_offer_name"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_offer_desc" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_offer_name"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/offer_name"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapSentences"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_offer_perc" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_offer_expiry"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/offer_expiry"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/edt_offer_name" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_net_price"
+                    style="@style/EditTextBackground"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:hint="@string/net_price"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:maxLines="1"
+                    android:padding="@dimen/_16sdp"
+                    app:font="@{`regular`}"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintStart_toStartOf="@id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_offer_expiry" />
+
+
+                <TextView
+                    android:id="@+id/tv_tax"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/tax"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@id/edt_net_price" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_tax"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintEnd_toEndOf="@id/guide_end"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tax"
+                    android:background="@drawable/edittext_round_background">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinner_media_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/product_tax"
+                        android:backgroundTint="@color/black" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_tax_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/this_tax_will_be_included_once_you_checkout"
+                    android:textColor="@color/color_858585"
+                    android:textSize="@dimen/_10ssp"
+                    app:font="@{`regular`}"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@id/rl_tax" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/bg_btn_dark_primary"
+                    android:gravity="center"
+                    android:padding="@dimen/_16sdp"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_18ssp"
+                    app:font="@{`bold`}"
+                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
+                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_tax_desc" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

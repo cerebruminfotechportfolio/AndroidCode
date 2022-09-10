@@ -5,74 +5,88 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+       android:background="@drawable/bg_white_semi_round"
+        android:padding="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_16sdp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:cardCornerRadius="@dimen/_6sdp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_12sdp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_profile"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
                     android:src="@drawable/ic_user"
+                    app:civ_border_width="@dimen/_4sdp"
+                    app:civ_border_color="#48CAE4"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/lindata"
+                    app:layout_constraintBottom_toBottomOf="@+id/lindata"/>
 
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Pooja"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textSize="@dimen/_14ssp"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    app:font="@{`regular`}"
-                    app:layout_constraintEnd_toEndOf="@+id/iv_profile"
-                    app:layout_constraintStart_toStartOf="@+id/iv_profile"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
 
-                <TextView
-                    android:id="@+id/tv_number"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="12345678888888888ggggg"
-                    android:textColor="@color/black"
-                    android:gravity="center"
-                    android:textSize="@dimen/_14ssp"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    app:font="@{`regular`}"
-                    app:layout_constraintEnd_toEndOf="@+id/iv_profile"
-                    app:layout_constraintStart_toStartOf="@+id/iv_profile"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
             <LinearLayout
+                android:id="@+id/lindata"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:weightSum="2"
+                android:weightSum="3"
                 android:orientation="horizontal"
                 android:layout_marginHorizontal="@dimen/_16sdp"
                 app:layout_constraintStart_toEndOf="@+id/iv_profile"
-                app:layout_constraintTop_toTopOf="@+id/iv_profile"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_name">
+                app:layout_constraintBottom_toBottomOf="parent">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:id="@+id/tv_name"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:text="Poojadddddddddddddddd "
+                       android:textColor="@color/text_color"
+                       android:textSize="@dimen/_14ssp"
+                       app:font="@{`semibold`}"
+                       android:maxLines="1"
+                       android:layout_marginEnd="@dimen/_8sdp"
+                       android:ellipsize="end"
+                       app:layout_constraintEnd_toStartOf="@+id/view"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"  />
+
+                   <TextView
+                       android:id="@+id/tv_number"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:text="9813456789"
+                       android:layout_marginEnd="@dimen/_8sdp"
+
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/_10ssp"
+                       android:layout_marginTop="@dimen/_6sdp"
+                       app:font="@{`regular`}"
+                       app:layout_constraintEnd_toStartOf="@+id/view"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+              <TextView
+                  android:layout_width="@dimen/_2sdp"
+                  android:layout_height="0dp"
+                  android:id="@+id/view"
+                  android:background="#d9d9d9"
+                  app:layout_constraintBottom_toBottomOf="@+id/tv_number"
+                  app:layout_constraintTop_toTopOf="@+id/tv_name"
+                  app:layout_constraintEnd_toEndOf="parent"/>
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <LinearLayout
+                    android:layout_marginStart="8sp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_gravity="center"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -80,24 +94,20 @@
                         android:id="@+id/tv_money"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:text="@string/money_spent"
-                        android:textColor="@color/black"
-                        android:gravity="center"
-                        android:textSize="@dimen/_16ssp"
+                        android:textColor="@color/color_858585"
+                        android:textSize="@dimen/_10ssp"
                         android:layout_marginTop="@dimen/_2sdp"
-                        app:font="@{`bold`}"/>
+                        app:font="@{`regular`}"/>
                     <TextView
                         android:id="@+id/tv_money_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/money_spent"
+                        android:text="$23456"
                         android:textColor="@color/text_color"
-                        android:gravity="center"
                         android:textSize="@dimen/_14ssp"
-                        android:layout_marginTop="@dimen/_12sdp"
-                        app:font="@{`regular`}"/>
+                        android:layout_marginTop="@dimen/_6sdp"
+                        app:font="@{`semibold`}"/>
 
 
                 </LinearLayout>
@@ -105,7 +115,7 @@
                                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_8sdp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -113,31 +123,27 @@
                         android:id="@+id/tv_order"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:text="@string/total_orders"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_858585"
                         android:gravity="center"
-                        android:textSize="@dimen/_16ssp"
+                        android:textSize="@dimen/_10ssp"
                         android:layout_marginTop="@dimen/_2sdp"
-                        app:font="@{`bold`}"/>
+                        app:font="@{`regular`}"/>
                     <TextView
                         android:id="@+id/tv_order_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/money_spent"
+                        android:text="44"
                         android:textColor="@color/text_color"
                         android:gravity="center"
                         android:textSize="@dimen/_14ssp"
-                        android:layout_marginTop="@dimen/_12sdp"
-                        app:font="@{`regular`}"/>
+                        android:layout_marginTop="@dimen/_6sdp"
+                        app:font="@{`semibold`}"/>
                                 </LinearLayout>
 
             </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

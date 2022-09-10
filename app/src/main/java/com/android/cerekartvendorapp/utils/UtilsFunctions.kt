@@ -11,15 +11,13 @@ import android.os.Build
 import android.provider.MediaStore
 import android.provider.Settings
 import android.text.format.DateUtils
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.LinearLayout
-import android.widget.PopupWindow
-import android.widget.TextView
-import android.widget.TimePicker
+import android.widget.*
+import android.widget.CompoundButton
+import androidx.appcompat.widget.SwitchCompat
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.FileProvider
 import com.android.cerekartvendorapp.CereKartVendorApp
@@ -32,6 +30,7 @@ import java.io.File
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 object UtilsFunctions {
 
@@ -142,8 +141,24 @@ object UtilsFunctions {
         popup.isFocusable = true
 
         val tvOptionOne = layout.findViewById<TextView>(R.id.tv_sub_cat)
+        val switchStock = layout.findViewById<SwitchCompat>(R.id.switch_stock)
+        val switchAvail = layout.findViewById<SwitchCompat>(R.id.switch_available)
         val tvOptionTwo = layout.findViewById<TextView>(R.id.tv_add_tax)
         var popPos = -1
+
+        switchStock?.setOnCheckedChangeListener({ _ , isChecked ->
+           if(isChecked)
+               switchAvail.isChecked=false
+            else
+                switchAvail.isChecked=true
+        })
+
+        switchAvail?.setOnCheckedChangeListener({ _ , isChecked ->
+            if(isChecked)
+                switchStock.isChecked=false
+            else
+                switchStock.isChecked=true
+        })
         tvOptionOne.setOnClickListener {
             popup.dismiss()
             popPos = 2

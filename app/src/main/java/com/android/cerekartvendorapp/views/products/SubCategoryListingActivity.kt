@@ -25,7 +25,7 @@ class SubCategoryListingActivity : BaseActivity<ActivityProductCatalougeListingB
     private  var searchKey: String?=null
     private lateinit var mBinding: ActivityProductCatalougeListingBinding
     private val mViewModel by lazy { ViewModelProvider(this)[ForgotPasswordViewModel::class.java] }
-
+   private  var isStockAvail=false
     override fun getLayoutId(): Int {
         return R.layout.activity_product_catalouge_listing
     }
@@ -43,6 +43,7 @@ class SubCategoryListingActivity : BaseActivity<ActivityProductCatalougeListingB
     private fun getIntentData() {
         intent?.getStringExtra(IntentConstant.key_cat_name)
         intent?.getStringExtra(IntentConstant.key_cat_name)
+        isStockAvail=intent?.getBooleanExtra(IntentConstant.key_stock_avail,false)!!
     }
 
     private fun initRecyclerView() {
@@ -100,6 +101,9 @@ class SubCategoryListingActivity : BaseActivity<ActivityProductCatalougeListingB
     override fun onSelect(pos: Int, itemPos: Int) {
        when(pos)
        {
+           0-> startActivity(Intent(this,AddProductActivity::class.java).putExtra(IntentConstant.key_stock_avail,isStockAvail))
+
+
            2->startActivity(Intent(this,AddSubCategoryActivity::class.java))
        }
         Handler(Looper.getMainLooper()).postDelayed({

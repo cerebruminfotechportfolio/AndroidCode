@@ -83,6 +83,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/adapters/ViewGalleryAdapter.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/api/ApiClient.kt">
           <value>
             <set />
@@ -233,6 +238,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/viewmodel/AddProductViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/viewmodel/BaseViewModel.kt">
           <value>
             <set />
@@ -273,12 +283,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/gallery/AddGalleryImagesActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/gallery/GalleryFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/gallery/ViewGalleryFragment.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/home/HomeFragment.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/home/LandingMainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/AddProductActivity.kt">
           <value>
             <set />
           </value>
@@ -333,12 +363,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/bg_white_semi_round.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/edittext_round_background.xml">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_cal.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu.xml">
           <value>
             <set />
           </value>
@@ -354,6 +399,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/tab_indicator_selector_selected.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_add_gallery_images.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_add_product.xml">
           <value>
             <set />
           </value>
@@ -413,6 +468,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/fragment_view_gallery.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/home_toolbar.xml">
           <value>
             <set />
@@ -468,6 +528,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/layout_spinner_item.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/popup_product_catalouge.xml">
           <value>
             <set />
@@ -479,6 +544,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/row_item_filter_tag.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/row_item_gallery.xml">
           <value>
             <set />
           </value>
@@ -519,6 +589,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/gradle.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/app/src/main/java/com/groceriesking/customer/api/ApiClient.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/app/src/main/java/com/groceriesking/customer/views/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/build.gradle">
           <value>
             <set />
           </value>

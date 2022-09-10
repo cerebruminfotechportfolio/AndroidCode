@@ -7,13 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_16sdp"
-        android:background="@drawable/edittext_round_background"
+        android:background="@drawable/bg_white_semi_round"
         android:padding="@dimen/_12sdp">
 
         <ImageView
             android:id="@+id/iv_profile"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
             android:src="@drawable/ic_user"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

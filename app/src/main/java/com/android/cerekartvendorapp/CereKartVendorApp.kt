@@ -17,6 +17,7 @@ class CereKartVendorApp : Application() {
         customFontFamily!!.addFont("semibold", "Poppins-SemiBold.ttf")
         customFontFamily!!.addFont("bold", "Poppins-SemiBold.ttf")
         customFontFamily!!.addFont("betty", "Sixty_Nine_Demo.ttf")
+        customFontFamily!!.addFont("medium", "Montserrat-Medium_0.ttf")
     }
 
     companion object

@@ -13,5 +13,5 @@ import com.android.cerekartvendorapp.R
 data class DataValidation(
     val message: String = CereKartVendorApp.instance
         .getString(R.string.something_went_wrong),
-    var type: Int = 0
+    var type: Int = -1
 )

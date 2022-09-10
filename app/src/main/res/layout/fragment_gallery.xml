@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/_16sdp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+    <TextView
+        android:id="@+id/tv_products"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/gallery"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_20ssp"
+        app:font="@{`bold`}"
+        app:layout_constraintEnd_toStartOf="@+id/iv_add"
+        app:layout_constraintStart_toStartOf="@+id/guide_begin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_add"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_pluss"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_products"
+        app:layout_constraintEnd_toEndOf="@+id/guide_end"
+        app:layout_constraintTop_toTopOf="@+id/tv_products"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs_container"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintStart_toStartOf="@id/guide_begin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_products"
+        app:tabGravity="fill"
+        app:tabIndicator="@android:color/transparent"
+        app:tabBackground="@drawable/tab_indicator_selector"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        android:background="@null"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabTextAppearance="@style/style_tab"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/color_bdbdbd" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_coupons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintStart_toStartOf="@id/guide_begin"
+        app:layout_constraintTop_toBottomOf="@+id/tabs_container" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

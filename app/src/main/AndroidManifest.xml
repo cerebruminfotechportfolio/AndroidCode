@@ -56,6 +56,10 @@
             android:exported="false"/>
         <activity android:name=".views.products.AllProductListingActivity"
             android:exported="false"/>
+        <activity android:name=".views.gallery.AddGalleryImagesActivity"
+            android:exported="false"/>
+        <activity android:name=".views.products.AddProductActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

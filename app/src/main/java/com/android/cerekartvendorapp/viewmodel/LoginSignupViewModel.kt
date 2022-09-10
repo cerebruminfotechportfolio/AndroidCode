@@ -52,7 +52,7 @@ class LoginSignupViewModel : BaseViewModel() {
                 mValidationLiveData.value = DataValidation(
                     CereKartVendorApp.instance.getString(
                         R.string.please_enter_email_address
-                    )
+                    ),0
                 )
                 return false
             } else if (!ValidationUtils.isEmailValid(mEmailEditText.get().toString().trim())) {
@@ -60,14 +60,14 @@ class LoginSignupViewModel : BaseViewModel() {
                     CereKartVendorApp.instance.getString(
                         R.string.please_enter_valid_email_address
                     )
-                )
+                ,0)
                 return false
             } else if (mPasswordText.get().isNullOrBlank()) {
                 mValidationLiveData.value = DataValidation(
                     CereKartVendorApp.instance.getString(
                         R.string.please_enter_password
                     )
-                )
+               ,1 )
                 return false
             } /*else if (!ValidationUtils.isPasswordValid(mPasswordText.get() ?: "")) {
                 mValidationLiveData.value = DataValidation(

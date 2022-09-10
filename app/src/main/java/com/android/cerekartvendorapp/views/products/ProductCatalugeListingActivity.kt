@@ -108,6 +108,7 @@ class ProductCatalugeListingActivity : BaseActivity<ActivityProductCatalougeList
         intent.apply {
             putExtra(IntentConstant.key_cat_id,"")
             putExtra(IntentConstant.key_cat_name,"")
+            putExtra(IntentConstant.key_stock_avail,true)
             startActivity(intent)
         }
     }

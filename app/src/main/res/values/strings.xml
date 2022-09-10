@@ -7,18 +7,23 @@
     <string name="please_enter_password">Password is required</string>
     <string name="please_enter_name">Please enter name</string>
     <string name="please_enter_valid_name">Full name length must be at least 3</string>
+    <string name="please_enter_prod_quantity">Please enter quantity</string>
+    <string name="please_enter_prod_name">Please enter name</string>
+    <string name="field_required">This field is required</string>
     <!-- <string name="please_enter_password_valid">Please enter password with 8&#8211;16 characters, one upper case, one lower case letter, one special character and one number.</string>-->
     <string name="please_enter_password_valid">Password length must be 8&#8211;16</string>
+
+
     <string name="permission_from_device">Please provide the permission to use this feature.</string>
     <string name="cancel">Cancel</string>
     <string name="ok">Ok</string>
     <string name="pick_what_you_want_to_get_delivered">Pick what you want to get delivered</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
-    <string name="forgot_password"><u>Forgot Password</u></string>
+    <string name="forgot_password"><u>Forgot Your Password</u></string>
     <string name="login">Login</string>
     <string name="reset_password">Reset Password</string>
-    <string name="go_back_to_login">Go back to login</string>
+    <string name="go_back_to_login"><u>Go back to Login</u></string>
     <string name="home">Home</string>
     <string name="orders">Orders</string>
     <string name="service_agents">Service Agents</string>
@@ -62,7 +67,6 @@
     <string name="colour_code">Colour Code</string>
     <string name="category_image">Category Image</string>
     <string name="save">Save</string>
-    <string name="add_product">Add Product</string>
     <string name="edit">Edit</string>
     <string name="disable">Disable</string>
     <string name="delete">Delete</string>
@@ -71,5 +75,32 @@
     <string name="sort">Sort</string>
     <string name="item_type">Item Type</string>
     <string name="apply_tax">Apply Tax</string>
+    <string name="add_photos_videos"><![CDATA[Add Photos & Videos]]></string>
+    <string name="general">General</string>
+    <string name="title">Title</string>
+    <string name="please_enter_description">Please enter description</string>
+    <string name="specifications">Specifications</string>
+    <string name="media_info">Media Info</string>
+    <string name="upload">Upload</string>
+    <string name="add_product">Add Product</string>
+    <string name="bread">Bread</string>
+    <string name="login_now">Login Now</string>
+    <string name="product_quantity">Product Quantity</string>
+    <string name="product_name">Product Name</string>
+    <string name="veg">Veg</string>
+    <string name="non_veg">Non Veg</string>
+    <string name="product_description">Product Description</string>
+    <string name="duration">Duration(in minutes)</string>
+    <string name="price">Price</string>
+    <string name="included_services">Included Services</string>
+    <string name="excluded_services">Excluded Services</string>
+    <string name="product_image">Product Image</string>
+    <string name="offer_description">Offer Description</string>
+    <string name="offer">Offer(%)</string>
+    <string name="offer_name">Offer Name</string>
+    <string name="offer_expiry">Offer Expiry</string>
+    <string name="net_price">Net Price</string>
+    <string name="tax">Tax(%)</string>
+    <string name="this_tax_will_be_included_once_you_checkout">This tax will be included once you checkout</string>
 
 </resources>

@@ -33,9 +33,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_6sdp"
                     android:drawableEnd="@drawable/ic_cal"
-                    android:padding="@dimen/_16sdp"
                     android:text="@string/select_date_range"
                     android:textSize="@dimen/_16ssp"
+                   android:padding="@dimen/_16sdp"
                     app:font="@{`regular`}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -75,9 +75,9 @@
                             android:id="@+id/lin_sale"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/edittext_round_background"
+                            android:background="@drawable/bg_white_semi_round"
                             android:orientation="vertical"
-                            android:padding="@dimen/_4sdp"
+                            android:paddingVertical="@dimen/_16sdp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -85,15 +85,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:src="@drawable/ic_menu" />
+                                android:src="@drawable/ic_dollar" />
 
                             <TextView
+                                android:id="@+id/tv_order_sale"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="4"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:font="@{`semibold`}"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_24ssp" />
+                                android:textSize="@dimen/_16ssp" />
 
                         </LinearLayout>
 
@@ -106,7 +109,7 @@
                             android:gravity="center"
                             android:text="@string/total_order_sales"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_14ssp"
+                            android:textSize="@dimen/_10ssp"
                             app:font="@{`regular`}"
                             app:layout_constraintEnd_toEndOf="@+id/lin_sale"
                             app:layout_constraintStart_toStartOf="@+id/lin_sale"
@@ -124,9 +127,9 @@
                             android:id="@+id/lin_order"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/edittext_round_background"
+                            android:background="@drawable/bg_white_semi_round"
                             android:orientation="vertical"
-                            android:padding="@dimen/_4sdp"
+                            android:paddingVertical="@dimen/_16sdp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -134,15 +137,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:src="@drawable/ic_menu" />
+                                android:src="@drawable/ic_cart" />
 
                             <TextView
+                                android:id="@+id/tv_order_place"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
+                                android:layout_gravity="center|bottom"
                                 android:text="4"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:font="@{`semibold`}"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_24ssp" />
+                                android:textSize="@dimen/_16ssp" />
 
                         </LinearLayout>
 
@@ -155,7 +161,7 @@
                             android:gravity="center"
                             android:text="@string/total_orders_placed"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_14ssp"
+                            android:textSize="@dimen/_10ssp"
                             app:font="@{`regular`}"
                             app:layout_constraintEnd_toEndOf="@+id/lin_order"
                             app:layout_constraintStart_toStartOf="@+id/lin_order"
@@ -171,9 +177,9 @@
                             android:id="@+id/lin_product"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/edittext_round_background"
+                            android:background="@drawable/bg_white_semi_round"
                             android:orientation="vertical"
-                            android:padding="@dimen/_4sdp"
+                            android:paddingVertical="@dimen/_16sdp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -181,15 +187,17 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:src="@drawable/ic_menu" />
+                                android:src="@drawable/ic_product" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="4"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:font="@{`semibold`}"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_24ssp" />
+                                android:textSize="@dimen/_16ssp" />
 
                         </LinearLayout>
 
@@ -202,7 +210,7 @@
                             android:gravity="center"
                             android:text="@string/total_products_added"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_14ssp"
+                            android:textSize="@dimen/_10ssp"
                             app:font="@{`regular`}"
                             app:layout_constraintEnd_toEndOf="@+id/lin_product"
                             app:layout_constraintStart_toStartOf="@+id/lin_product"
@@ -219,9 +227,9 @@
                             android:id="@+id/lin_rating"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/edittext_round_background"
+                            android:background="@drawable/bg_white_semi_round"
                             android:orientation="vertical"
-                            android:padding="@dimen/_4sdp"
+                            android:paddingVertical="@dimen/_16sdp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -229,15 +237,19 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:src="@drawable/ic_menu" />
+                                android:src="@drawable/ic_start" />
 
                             <TextView
+                                android:id="@+id/ic_rating"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="4"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                app:font="@{`semibold`}"
+
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_24ssp" />
+                                android:textSize="@dimen/_16ssp" />
 
                         </LinearLayout>
 
@@ -250,7 +262,7 @@
                             android:gravity="center"
                             android:text="@string/total_ratings"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_14ssp"
+                            android:textSize="@dimen/_10ssp"
                             app:font="@{`regular`}"
                             app:layout_constraintEnd_toEndOf="@+id/lin_rating"
                             app:layout_constraintStart_toStartOf="@+id/lin_rating"
@@ -264,7 +276,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:text="@string/total_sales_for_current_month"
-                    android:textColor="@color/black"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/_18ssp"
                     app:font="@{`bold`}"
                     app:layout_constraintEnd_toEndOf="parent"

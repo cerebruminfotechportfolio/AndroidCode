@@ -50,7 +50,19 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), View.OnClickListener
             }
 
         mViewModel.getValidationLiveData().observe(this, {
-            showToastShort(it.message)
+           when(it.type)
+           {
+             0->
+             {
+                 mBinding.etEmail.setError(it.message)
+                 mBinding.etEmail.requestFocus()
+             }
+             1->
+             {
+                 mBinding.edtPass.setError(it.message)
+                 mBinding.edtPass.requestFocus()
+             }
+           }
         })
         mViewModel.tempResponse.observe(this, {
             DataManager.setUserLoggedinStatus(true)
