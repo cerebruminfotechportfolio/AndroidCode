@@ -72,7 +72,7 @@
 
     </array>
     <array name="product_tax">
-        <item>Select</item>
+        <item>Select Tax From List*</item>
         <item>New Tax (2.5%)</item>
         <item>Vat (5%)</item>
     </array>
@@ -84,7 +84,7 @@
 
     <style name="style_tab" parent="@android:style/TextAppearance">
     <item name="android:fontFamily">@font/poppins_semibold</item>
-    <item name="android:textSize">@dimen/_16ssp</item>
+    <item name="android:textSize">@dimen/_14ssp</item>
     <item name="android:singleLine">true</item>
     </style>
 

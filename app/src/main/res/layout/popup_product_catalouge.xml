@@ -20,34 +20,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/stock_management"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/_14ssp"
         android:gravity="center"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintBottom_toBottomOf="@id/switch_stock"
         android:layout_marginStart="@dimen/_8sdp"
         app:layout_constraintTop_toTopOf="@+id/switch_stock"
         app:layout_constraintStart_toEndOf="@+id/switch_stock" />
 
+
+  <View
+      android:id="@+id/view1"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stock"
+      android:layout_marginVertical="@dimen/_16sdp"
+      android:background="@color/color_e9e9e9"/>
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_available"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/_12sdp"
-        app:layout_constraintTop_toBottomOf="@+id/switch_stock"/>
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/view1"/>
 
     <TextView
         android:id="@+id/tv_avail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/manage_availability"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/_14ssp"
         android:gravity="center"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintBottom_toBottomOf="@id/switch_available"
         android:layout_marginStart="@dimen/_8sdp"
         app:layout_constraintTop_toTopOf="@+id/switch_available"
         app:layout_constraintStart_toEndOf="@+id/switch_available" />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_avail"
+        android:layout_marginVertical="@dimen/_16sdp"
+        android:background="@color/color_e9e9e9"/>
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_add_circle"
+    app:layout_constraintTop_toBottomOf="@id/view2"
+    app:layout_constraintStart_toStartOf="@id/switch_available"
+    app:layout_constraintEnd_toEndOf="@id/switch_available"
+    android:id="@+id/iv_add"
+    android:layout_marginTop="@dimen/_16sdp"/>
+
 
 
     <TextView
@@ -55,27 +82,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_sub_category"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/_14ssp"
         android:gravity="center"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:drawableStart="@drawable/ic_nav_orders"
-        android:drawablePadding="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_12sdp"
-        app:layout_constraintTop_toBottomOf="@+id/switch_available"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@id/tv_avail"/>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sub_cat"
+        android:layout_marginVertical="@dimen/_16sdp"
+        android:background="@color/color_e9e9e9"/>
+
+
+
     <TextView
         android:id="@+id/tv_add_tax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_tax"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/_14ssp"
         android:gravity="center"
-        android:layout_marginStart="@dimen/_2sdp"
-        android:drawableStart="@drawable/ic_nav_orders"
-        android:drawablePadding="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_12sdp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sub_cat"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintTop_toTopOf="@id/iv_tax"
+        app:layout_constraintStart_toStartOf="@+id/tv_sub_cat"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_tax"
+        app:layout_constraintTop_toBottomOf="@id/view3"
+        app:layout_constraintStart_toStartOf="@id/iv_add"
+        app:layout_constraintEnd_toEndOf="@id/iv_add"
+        android:id="@+id/iv_tax"
+        android:layout_marginTop="@dimen/_16sdp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

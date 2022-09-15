@@ -29,7 +29,8 @@
         <activity android:name="com.canhub.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>
         <activity android:name="com.tracket.views.splash.SplashActivity"
-            android:exported="false">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,14 +48,14 @@
             android:exported="false">
 
         </activity>
-        <activity android:name=".views.products.ProductCatalugeListingActivity"
+        <activity android:name=".views.products.ProductCatalougeListingFragment"
             android:exported="false"/>
         <activity android:name=".views.products.AddSubCategoryActivity"
             android:exported="false"/>
         <activity android:name=".views.products.SubCategoryListingActivity" android:exported="false"/>
         <activity android:name=".views.products.SubCategoryProductListingActivity"
             android:exported="false"/>
-        <activity android:name=".views.products.AllProductListingActivity"
+        <activity android:name=".views.products.AllProductListingFragment"
             android:exported="false"/>
         <activity android:name=".views.gallery.AddGalleryImagesActivity"
             android:exported="false"/>

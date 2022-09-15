@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_24sdp"
+        android:background="@drawable/tab_indicator_selector_default"
+        app:hideKeyBoardOnClick="@{`back`}">
+
+
+
+        <TextView
+            android:id="@+id/tv_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:text="@string/apply_tax"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/_14ssp"
+            app:font="@{`regular`}"
+             />
+
+        <RelativeLayout
+            android:id="@+id/rl_tax"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/tv_products"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/bg_white_semi_round"
+            android:padding="@dimen/_16sdp"
+            >
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_tax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_9e9e9e"
+                android:entries="@array/product_tax" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="*Tax will be applied to all products under this category"
+            android:textColor="@color/color_9e9e9e"
+            android:textSize="@dimen/_10ssp"
+            app:font="@{`regular`}"
+            android:layout_below="@+id/rl_tax" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/tv_desc"
+          android:weightSum="2"
+          android:orientation="horizontal">
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_border_transparent"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/color_secondary"
+            android:textSize="@dimen/_18ssp"
+            app:font="@{`bold`}"
+          />
+
+
+
+
+          <androidx.appcompat.widget.AppCompatTextView
+              android:id="@+id/btn_save"
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_marginStart="@dimen/_8sdp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/_20sdp"
+              android:background="@drawable/tab_indicator_selector_selected"
+              android:gravity="center"
+              android:padding="@dimen/_10sdp"
+              android:text="@string/save"
+              android:textColor="@color/white"
+              android:textSize="@dimen/_18ssp"
+              app:font="@{`bold`}"
+              android:textAllCaps="true"
+              />
+      </LinearLayout>
+    </RelativeLayout>
+
+</layout>

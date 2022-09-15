@@ -14,20 +14,20 @@ import com.android.cerekartvendorapp.callbacks.PopupMenuClick
 import com.android.cerekartvendorapp.callbacks.TextWatcherCallback
 import com.android.cerekartvendorapp.constants.IntentConstant
 import com.android.cerekartvendorapp.customview.EditTextWatcher
-import com.android.cerekartvendorapp.databinding.ActivityProductCatalougeListingBinding
+import com.android.cerekartvendorapp.databinding.FragmentProductCatalougeListingBinding
 import com.android.cerekartvendorapp.viewmodel.ForgotPasswordViewModel
 import com.android.cerekartvendorapp.views.base.BaseActivity
 
 
-class SubCategoryProductListingActivity : BaseActivity<ActivityProductCatalougeListingBinding>(), View.OnClickListener,
+class SubCategoryProductListingActivity : BaseActivity<FragmentProductCatalougeListingBinding>(), View.OnClickListener,
     PopupMenuClick, AdapterItemClickCallback {
     private lateinit var mAdapter: SubCategoryProductListAdapter
     private  var searchKey: String?=null
-    private lateinit var mBinding: ActivityProductCatalougeListingBinding
+    private lateinit var mBinding: FragmentProductCatalougeListingBinding
     private val mViewModel by lazy { ViewModelProvider(this)[ForgotPasswordViewModel::class.java] }
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_product_catalouge_listing
+        return R.layout.fragment_product_catalouge_listing
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

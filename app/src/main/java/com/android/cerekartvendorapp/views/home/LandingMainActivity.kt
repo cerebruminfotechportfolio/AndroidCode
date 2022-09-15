@@ -13,7 +13,7 @@ import com.android.cerekartvendorapp.constants.AppConstants
 import com.android.cerekartvendorapp.databinding.ActivityLandingBinding
 import com.android.cerekartvendorapp.views.authentication.LoginActivity
 import com.android.cerekartvendorapp.views.base.BaseActivity
-import com.android.cerekartvendorapp.views.coupons.CouponDealFragment
+import com.android.cerekartvendorapp.views.coupons.OfferFragment
 import com.android.cerekartvendorapp.views.gallery.GalleryFragment
 import com.android.cerekartvendorapp.views.products.ProductsFragment
 import com.bumptech.glide.Glide
@@ -109,7 +109,7 @@ class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClick
                 )
             }
             mBinding.linOffers -> {
-                val fragment = CouponDealFragment()
+                val fragment = OfferFragment()
 
                 mBinding.drawerLayout.closeDrawers()
                 this.callFragments(
@@ -133,5 +133,11 @@ class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClick
                 )
             }
         }
+    }
+
+    fun setUpToolbar(name: String) {
+        mBinding.topView.txtTitle.visibility=View.VISIBLE
+        mBinding.topView.txtTitle.text=name
+        mBinding.topView.imgLogo.visibility=View.GONE
     }
 }

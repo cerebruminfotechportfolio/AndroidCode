@@ -57,6 +57,9 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
     private fun setUpData() {
         permissionHelper = PermissionHelper()
         mBinding.topView.imgeNavigation.setImageResource(R.drawable.ic_profile_back)
+        mBinding.topView.imgAdd.setImageResource(R.drawable.ic_add_circle_white)
+        mBinding.topView.txtTitle.setText(getString(R.string.add_category))
+        mBinding.topView.imgAdd.visibility=View.VISIBLE
     }
 
     private fun addNewView() {
@@ -82,7 +85,7 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
 
     private fun setClickListeners() {
         mBinding.topView.imgeNavigation.setOnClickListener(this)
-        mBinding.tvAddMore.setOnClickListener(this)
+        mBinding.topView.imgAdd.setOnClickListener(this)
         mBinding.tvUploadImage.setOnClickListener(this)
         mBinding.linColour.setOnClickListener(this)
         permissionHelper.setListener(this)
@@ -96,7 +99,7 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
             mBinding.linColour -> {
                 selectColour()
             }
-            mBinding.tvAddMore -> {
+            mBinding.topView.imgAdd -> {
                 if (i == 8)
                     showToastShort(getString(R.string.max_cat_allowed))
                 else {

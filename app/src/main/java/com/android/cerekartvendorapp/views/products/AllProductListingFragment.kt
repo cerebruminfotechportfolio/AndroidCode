@@ -16,44 +16,39 @@ import com.android.cerekartvendorapp.callbacks.TextWatcherCallback
 import com.android.cerekartvendorapp.constants.IntentConstant
 import com.android.cerekartvendorapp.customview.ChooseFilterBottomSheet
 import com.android.cerekartvendorapp.customview.EditTextWatcher
-import com.android.cerekartvendorapp.databinding.ActivityProductCatalougeListingBinding
+import com.android.cerekartvendorapp.databinding.FragmentProductCatalougeListingBinding
 import com.android.cerekartvendorapp.viewmodel.ForgotPasswordViewModel
-import com.android.cerekartvendorapp.views.base.BaseActivity
+import com.android.cerekartvendorapp.views.base.BaseFragment
 
 
-class AllProductListingActivity : BaseActivity<ActivityProductCatalougeListingBinding>(),
+class AllProductListingFragment : BaseFragment<FragmentProductCatalougeListingBinding>(),
     View.OnClickListener,
     PopupMenuClick, AdapterItemClickCallback, ProductFilterAdapter.ClickListener {
-    private  var itemSort: String=""
+    private var itemSort: String = ""
     private lateinit var mAdapter: AllProductListAdapter
     private var searchKey: String? = null
     private var itemClick = -1
-    private lateinit var mBinding: ActivityProductCatalougeListingBinding
+    private lateinit var mBinding: FragmentProductCatalougeListingBinding
     private val mViewModel by lazy { ViewModelProvider(this)[ForgotPasswordViewModel::class.java] }
     private lateinit var sheet: ChooseFilterBottomSheet
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_product_catalouge_listing
+        return R.layout.fragment_product_catalouge_listing
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         mBinding = getViewDataBinding()
-        getIntentData()
         setClickListeners()
         setUpData()
         setObserver()
         initRecyclerView()
     }
 
-    private fun getIntentData() {
-        intent?.getStringExtra(IntentConstant.key_cat_name)
-        intent?.getStringExtra(IntentConstant.key_cat_name)
-    }
 
     private fun initRecyclerView() {
         mAdapter = AllProductListAdapter(this, this)
-        val layoutRecManager = LinearLayoutManager(this)
+        val layoutRecManager = LinearLayoutManager(requireActivity())
         mBinding.rvproduct.apply {
             layoutManager = layoutRecManager
             adapter = mAdapter
@@ -61,16 +56,15 @@ class AllProductListingActivity : BaseActivity<ActivityProductCatalougeListingBi
     }
 
     private fun setUpData() {
-        mBinding.topView.imgeNavigation.setImageResource(R.drawable.ic_profile_back)
-        mBinding.tvProducts.setText(getString(R.string.all_products))
-        mBinding.ivAdd.visibility = View.VISIBLE
+
+        mBinding.topView.main.visibility = View.GONE
         mBinding.linFilter.visibility = View.VISIBLE
         mBinding.tvCategories.visibility = View.GONE
     }
 
 
     private fun setObserver() {
-        setBaseViewModel(mViewModel)
+        setFragmentBaseViewModel(mViewModel)
     }
 
     private fun setClickListeners() {
@@ -101,23 +95,22 @@ class AllProductListingActivity : BaseActivity<ActivityProductCatalougeListingBi
     override fun onClick(p0: View?) {
         val dataList = ArrayList<String>()
         when (p0) {
-            mBinding.topView.imgeNavigation -> {
-                finish()
-            }
+
             mBinding.tvSort -> {
                 itemClick = 0
                 val list = resources.getStringArray(R.array.filter_product_sort).toList()
                 dataList.addAll(list)
-                sheet = ChooseFilterBottomSheet(this, this, itemSort, dataList,itemClick)
+                sheet =
+                    ChooseFilterBottomSheet(requireActivity(), this, itemSort, dataList, itemClick)
                 sheet.show()
 
             }
-            mBinding.tvItem->
-            {
+            mBinding.tvItem -> {
                 itemClick = 1
                 val list = resources.getStringArray(R.array.filter_product_item_type).toList()
                 dataList.addAll(list)
-                sheet = ChooseFilterBottomSheet(this, this, itemSort, dataList,itemClick)
+                sheet =
+                    ChooseFilterBottomSheet(requireActivity(), this, itemSort, dataList, itemClick)
                 sheet.show()
             }
 
@@ -127,7 +120,7 @@ class AllProductListingActivity : BaseActivity<ActivityProductCatalougeListingBi
 
     override fun onSelect(pos: Int, itemPos: Int) {
         when (pos) {
-            2 -> startActivity(Intent(this, AddSubCategoryActivity::class.java))
+            2 -> startActivity(Intent(requireActivity(), AddSubCategoryActivity::class.java))
         }
         Handler(Looper.getMainLooper()).postDelayed({
             if (itemPos == mAdapter.itemCount - 1) {
@@ -138,7 +131,7 @@ class AllProductListingActivity : BaseActivity<ActivityProductCatalougeListingBi
     }
 
     override fun onItemSelect(pos: Int) {
-        val intent = Intent(this, SubCategoryProductListingActivity::class.java)
+        val intent = Intent(requireActivity(), SubCategoryProductListingActivity::class.java)
         intent.apply {
             putExtra(IntentConstant.key_cat_id, "")
             putExtra(IntentConstant.key_cat_name, "")

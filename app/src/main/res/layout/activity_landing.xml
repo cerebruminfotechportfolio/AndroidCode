@@ -31,6 +31,7 @@
                 android:id="@+id/frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:background="@color/bg_color"
                 android:layout_marginTop="@dimen/_16sdp"
                 app:layout_constraintTop_toBottomOf="@+id/topView"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -15,6 +15,7 @@ import com.android.cerekartvendorapp.customview.ChooseCameraGalleryBottomSheet
 import com.android.cerekartvendorapp.databinding.ActivityAddGalleryImagesBinding
 import com.android.cerekartvendorapp.databinding.ActivityAddSubCategoryBinding
 import com.android.cerekartvendorapp.permissionhelper.PermissionHelper
+import com.android.cerekartvendorapp.utils.FileUtils
 import com.android.cerekartvendorapp.utils.UtilsFunctions
 import com.android.cerekartvendorapp.viewmodel.ForgotPasswordViewModel
 import com.android.cerekartvendorapp.views.base.BaseActivity
@@ -26,7 +27,8 @@ import com.skydoves.colorpickerview.ColorPickerDialog
 import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener
 
 
-class AddGalleryImagesActivity : BaseActivity<ActivityAddGalleryImagesBinding>(), View.OnClickListener,
+class AddGalleryImagesActivity : BaseActivity<ActivityAddGalleryImagesBinding>(),
+    View.OnClickListener,
     PermissionHelper.IGetPermissionListener,
     ChooseCameraGalleryBottomSheet.PermissionSelectDialogCallBack {
     private var captureFileUri: Uri? = null
@@ -134,6 +136,20 @@ class AddGalleryImagesActivity : BaseActivity<ActivityAddGalleryImagesBinding>()
                     }
 
                 }
+
+                PermissionConstants.REQ_VIDEO -> {
+                    if (data != null && data.data != null) {
+                        val imageurl: Uri = data.data!!
+                        val path = FileUtils.getRealPathFromURI(this, imageurl)
+                        path?.let {
+                            {
+
+                            }
+                        }
+
+                    }
+
+                }
                 PermissionConstants.REQ_CAMERA -> {
                     if (captureFileUri != null) {
                         cropImage.launch(
@@ -183,9 +199,13 @@ class AddGalleryImagesActivity : BaseActivity<ActivityAddGalleryImagesBinding>()
     }
 
     override fun onSelect(pos: Int) {
-        if (pos == 0)
-            UtilsFunctions.onGalleryJustImageChoose(this)
-        else {
+        if (pos == 0) {
+            if (mBinding.spinnerMediaType.selectedItemPosition == 0)
+                UtilsFunctions.onGalleryJustImageChoose(this)
+            else
+                UtilsFunctions.onGalleryJustVideoChoose(this)
+
+        } else {
             captureFileUri = UtilsFunctions.captureFile(this)
             captureFileUri?.let { UtilsFunctions.openCamera(this, it) }
         }

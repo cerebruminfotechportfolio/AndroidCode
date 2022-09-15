@@ -10,6 +10,8 @@
     <string name="please_enter_prod_quantity">Please enter quantity</string>
     <string name="please_enter_prod_name">Please enter name</string>
     <string name="field_required">This field is required</string>
+    <string name="image_name_length">Please enter aatleast 2 characters</string>
+    <string name="image_desc_name_length">Description should be minimum of 40 characters</string>
     <!-- <string name="please_enter_password_valid">Please enter password with 8&#8211;16 characters, one upper case, one lower case letter, one special character and one number.</string>-->
     <string name="please_enter_password_valid">Password length must be 8&#8211;16</string>
 
@@ -102,5 +104,12 @@
     <string name="net_price">Net Price</string>
     <string name="tax">Tax(%)</string>
     <string name="this_tax_will_be_included_once_you_checkout">This tax will be included once you checkout</string>
+    <string name="choose_option">Choose Option</string>
+    <string name="applicable_status">Applicable Status</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="available_management">Available Management</string>
+    <string name="description">Description</string>
+    <string name="active">Active</string>
+    <string name="add_category">Add Category</string>
 
 </resources>

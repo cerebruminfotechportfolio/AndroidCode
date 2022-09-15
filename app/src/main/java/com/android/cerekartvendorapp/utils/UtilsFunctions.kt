@@ -55,6 +55,17 @@ object UtilsFunctions {
             ), PermissionConstants.REQ_GALLERY
         )
     }
+    @JvmStatic
+    fun onGalleryJustVideoChoose(context: Activity) {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        intent.setType("video/*")
+        context.startActivityForResult(
+            Intent.createChooser(
+                intent,
+                context. resources.getString(R.string.image_action)
+            ), PermissionConstants.REQ_VIDEO
+        )
+    }
 
     @JvmStatic
     fun captureFile(context: Activity): Uri? {

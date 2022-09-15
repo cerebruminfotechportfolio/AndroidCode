@@ -29,24 +29,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_16sdp"
-        android:text="@string/gallery"
+        android:text="@string/coupons_offers"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/_20ssp"
         app:font="@{`bold`}"
-        app:layout_constraintEnd_toStartOf="@+id/iv_add"
+        app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@+id/guide_begin"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/iv_add"
-        android:layout_width="@dimen/_30sdp"
-        android:layout_height="@dimen/_30sdp"
-        android:padding="@dimen/_8sdp"
-        android:src="@drawable/ic_pluss"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_products"
-        app:layout_constraintEnd_toEndOf="@+id/guide_end"
-        app:layout_constraintTop_toTopOf="@+id/tv_products"/>
 
 
     <com.google.android.material.tabs.TabLayout
@@ -64,8 +53,8 @@
         android:background="@null"
         app:tabRippleColor="@android:color/transparent"
         app:tabTextAppearance="@style/style_tab"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/text_color" />
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/color_bdbdbd" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_coupons"

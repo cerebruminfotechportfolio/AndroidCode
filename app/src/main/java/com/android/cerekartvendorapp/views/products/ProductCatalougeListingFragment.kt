@@ -10,54 +10,58 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.cerekartvendorapp.R
 import com.android.cerekartvendorapp.adapters.ProductCatalogueListAdapter
 import com.android.cerekartvendorapp.callbacks.AdapterItemClickCallback
+import com.android.cerekartvendorapp.callbacks.DialogCallback
 import com.android.cerekartvendorapp.callbacks.PopupMenuClick
 import com.android.cerekartvendorapp.callbacks.TextWatcherCallback
 import com.android.cerekartvendorapp.constants.IntentConstant
 import com.android.cerekartvendorapp.customview.EditTextWatcher
-import com.android.cerekartvendorapp.databinding.ActivityProductCatalougeListingBinding
+import com.android.cerekartvendorapp.databinding.FragmentProductCatalougeListingBinding
+import com.android.cerekartvendorapp.utils.DialogUtils
 import com.android.cerekartvendorapp.viewmodel.ForgotPasswordViewModel
-import com.android.cerekartvendorapp.views.base.BaseActivity
+import com.android.cerekartvendorapp.views.base.BaseFragment
 
 
-class ProductCatalugeListingActivity : BaseActivity<ActivityProductCatalougeListingBinding>(), View.OnClickListener,
+class ProductCatalougeListingFragment : BaseFragment<FragmentProductCatalougeListingBinding>(),
     PopupMenuClick, AdapterItemClickCallback {
     private lateinit var mAdapter: ProductCatalogueListAdapter
-    private  var searchKey: String?=null
-    private lateinit var mBinding: ActivityProductCatalougeListingBinding
+    private var searchKey: String? = null
+    private lateinit var mBinding: FragmentProductCatalougeListingBinding
     private val mViewModel by lazy { ViewModelProvider(this)[ForgotPasswordViewModel::class.java] }
 
     override fun getLayoutId(): Int {
-        return R.layout.activity_product_catalouge_listing
+        return R.layout.fragment_product_catalouge_listing
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         mBinding = getViewDataBinding()
         setClickListeners()
         setUpData()
         setObserver()
         initRecyclerView()
     }
+
     private fun initRecyclerView() {
-        mAdapter = ProductCatalogueListAdapter(this,this)
-        val layoutRecManager = LinearLayoutManager(this)
+        mAdapter = ProductCatalogueListAdapter(this, this)
+        val layoutRecManager = LinearLayoutManager(requireActivity())
         mBinding.rvproduct.apply {
             layoutManager = layoutRecManager
             adapter = mAdapter
         }
     }
+
     private fun setUpData() {
-        mBinding.topView.imgeNavigation.setImageResource(R.drawable.ic_profile_back)
+        mBinding.topView.main.visibility = View.GONE
+
     }
 
 
     private fun setObserver() {
-        setBaseViewModel(mViewModel)
+        setFragmentBaseViewModel(mViewModel)
     }
 
     private fun setClickListeners() {
-        mBinding.topView.imgeNavigation.setOnClickListener(this)
-        mBinding.edtSearch.addTextChangedListener(EditTextWatcher(object :TextWatcherCallback {
+        mBinding.edtSearch.addTextChangedListener(EditTextWatcher(object : TextWatcherCallback {
             override fun onTextChanged(p0: CharSequence?) {
                 if (p0.toString().length >= 3) {
                     searchKey = p0.toString()
@@ -80,21 +84,20 @@ class ProductCatalugeListingActivity : BaseActivity<ActivityProductCatalougeList
         hitApi()*/
     }
 
-    override fun onClick(p0: View?) {
-        when (p0) {
-            mBinding.topView.imgeNavigation -> {
-                finish()
-            }
-
-        }
-
-    }
 
     override fun onSelect(pos: Int, itemPos: Int) {
-       when(pos)
-       {
-           2->startActivity(Intent(this,AddSubCategoryActivity::class.java))
-       }
+        when (pos) {
+            2 -> startActivity(Intent(requireActivity(), AddSubCategoryActivity::class.java))
+            3 -> {
+                DialogUtils.setTaxConfirmationDialog(requireActivity(), object : DialogCallback {
+                    override fun onPositiveClick(reason: String) {
+
+                    }
+
+                })
+            }
+        }
+
         Handler(Looper.getMainLooper()).postDelayed({
             if (itemPos == mAdapter.itemCount - 1) {
                 mBinding.rvproduct.setPadding(0, 0, 0, 60)
@@ -104,11 +107,11 @@ class ProductCatalugeListingActivity : BaseActivity<ActivityProductCatalougeList
     }
 
     override fun onItemSelect(pos: Int) {
-        val intent=Intent(this,SubCategoryListingActivity::class.java)
+        val intent = Intent(requireActivity(), SubCategoryListingActivity::class.java)
         intent.apply {
-            putExtra(IntentConstant.key_cat_id,"")
-            putExtra(IntentConstant.key_cat_name,"")
-            putExtra(IntentConstant.key_stock_avail,true)
+            putExtra(IntentConstant.key_cat_id, "")
+            putExtra(IntentConstant.key_cat_name, "")
+            putExtra(IntentConstant.key_stock_avail, true)
             startActivity(intent)
         }
     }

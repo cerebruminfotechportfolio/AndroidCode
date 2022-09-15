@@ -40,51 +40,24 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_end="@dimen/_16sdp" />
 
-                <TextView
-                    android:id="@+id/tv_products"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:text="@string/add_sub_category"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_20ssp"
-                    app:font="@{`bold`}"
-                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
-                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
-                    app:layout_constraintTop_toTopOf="parent" />
 
-
-                <TextView
-                    android:id="@+id/tv_add_more"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:background="@color/colorPrimary"
-                    android:drawableStart="@drawable/ic_plus"
-                    android:drawablePadding="@dimen/_10sdp"
-                    android:drawableTint="@color/white"
-                    android:padding="@dimen/_12sdp"
-                    android:text="@string/add_more"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp"
-                    app:font="@{`bold`}"
-                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
-                    app:layout_constraintTop_toBottomOf="@id/tv_products" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_category_name"
                     style="@style/EditTextBackground"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
                     android:hint="@string/category_name"
+                    android:textColorHint="@color/color_9e9e9e"
+                    android:background="@drawable/bg_white_semi_round"
                     android:inputType="textCapSentences"
                     app:font="@{`regular`}"
                     android:maxLength="100"
                     android:padding="@dimen/_16sdp"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintStart_toStartOf="@id/guide_begin"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_add_more" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:id="@+id/parent_linear_layout"
@@ -101,9 +74,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:text="@string/colour_code"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
-                    app:font="@{`bold`}"
+                    android:textColor="@color/color_9e9e9e"
+                    android:textSize="@dimen/_14ssp"
+                    app:font="@{`regular`}"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@id/parent_linear_layout" />
@@ -113,7 +86,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
-                    android:background="@drawable/edittext_round_background"
+                    android:background="@drawable/bg_border_white"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
@@ -133,9 +106,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:text="@string/category_image"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
-                    app:font="@{`bold`}"
+                    android:textColor="@color/color_9e9e9e"
+                    android:textSize="@dimen/_14ssp"
+                    app:font="@{`regular`}"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@id/linColour" />
@@ -144,7 +117,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_200sdp"
                     android:layout_marginTop="@dimen/_16sdp"
-                    android:background="@drawable/edittext_round_background"
+                    android:background="@drawable/bg_white_semi_round"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintStart_toStartOf="@id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@+id/tv_cat_image">
@@ -154,12 +127,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:drawableTop="@drawable/ic_settings"
+                        android:drawableTop="@drawable/ic_upload"
                         android:drawablePadding="@dimen/_10sdp"
                         android:gravity="center"
                         android:text="@string/upload_image"
-                        android:textColor="@color/text_color"
-                        android:textSize="@dimen/_16ssp" />
+                        app:font="@{`medium`}"
+                        android:textColor="@color/color_9e9e9e"
+                        android:textSize="@dimen/_14ssp" />
 
                     <ImageView
                         android:id="@+id/iv_cat"
@@ -174,13 +148,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_btn_dark_primary"
-                    android:elevation="@dimen/_3sdp"
                     app:font="@{`bold`}"
+                    android:backgroundTint="@color/color_secondary"
                     android:gravity="center"
                     android:padding="@dimen/_15sdp"
                     android:text="@string/save"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_18ssp"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     android:layout_marginHorizontal="@dimen/_20sdp"

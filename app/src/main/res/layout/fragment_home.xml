@@ -11,7 +11,6 @@
         app:hideKeyBoardOnClick="@{`back`}">
 
 
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -33,9 +32,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_6sdp"
                     android:drawableEnd="@drawable/ic_cal"
+                    android:padding="@dimen/_16sdp"
                     android:text="@string/select_date_range"
                     android:textSize="@dimen/_16ssp"
-                   android:padding="@dimen/_16sdp"
                     app:font="@{`regular`}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -47,14 +46,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_round_background"
-                    android:visibility="gone"
                     android:paddingVertical="@dimen/_8sdp"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_select_date"
                     app:mcv_selectionColor="@color/colorPrimary"
                     app:mcv_showOtherDates="all" />
-
 
 
                 <LinearLayout
@@ -92,11 +90,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="4"
                                 android:layout_marginTop="@dimen/_4sdp"
-                                app:font="@{`semibold`}"
+                                android:text="4"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_16ssp" />
+                                android:textSize="@dimen/_16ssp"
+                                app:font="@{`semibold`}" />
 
                         </LinearLayout>
 
@@ -144,11 +142,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|bottom"
-                                android:text="4"
                                 android:layout_marginTop="@dimen/_4sdp"
-                                app:font="@{`semibold`}"
+                                android:text="4"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_16ssp" />
+                                android:textSize="@dimen/_16ssp"
+                                app:font="@{`semibold`}" />
 
                         </LinearLayout>
 
@@ -193,11 +191,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="4"
                                 android:layout_marginTop="@dimen/_4sdp"
-                                app:font="@{`semibold`}"
+                                android:text="4"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_16ssp" />
+                                android:textSize="@dimen/_16ssp"
+                                app:font="@{`semibold`}" />
 
                         </LinearLayout>
 
@@ -244,12 +242,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="4"
                                 android:layout_marginTop="@dimen/_4sdp"
-                                app:font="@{`semibold`}"
-
+                                android:text="4"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_16ssp" />
+
+                                android:textSize="@dimen/_16ssp"
+                                app:font="@{`semibold`}" />
 
                         </LinearLayout>
 
@@ -284,163 +282,201 @@
                     app:layout_constraintTop_toBottomOf="@+id/lin_total_productivity" />
 
 
-                <TextView
-                    android:id="@+id/tv_revenue_number"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:background="@drawable/bg_grey_circle_border"
-                    android:gravity="center"
-                    android:text="45%"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
-                    app:font="@{`regular`}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_total_sales" />
-
-                <TextView
-                    android:id="@+id/tv_revenue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:gravity="center"
-                    android:text="@string/revenue"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
-                    app:font="@{`regular`}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_revenue_number" />
-
-                <TextView
-                    android:id="@+id/tv_revenue_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_4sdp"
-                    android:gravity="center"
-                    android:text="Rs 6000"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
-                    app:font="@{`bold`}"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_revenue" />
-
-                <LinearLayout
-                    android:id="@+id/lin_monthly_sale"
-                    android:layout_width="match_parent"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/const_sale"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
-                    android:orientation="horizontal"
-                    android:weightSum="3"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_revenue_price">
+                    android:background="@drawable/bg_white_semi_round"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingBottom="@dimen/_16sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_total_sales">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_rev"
+                        android:background="@drawable/circle_filledlight_bgt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_16sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ProgressBar
+                            android:id="@+id/progress_bar"
+                            android:layout_width="@dimen/_150sdp"
+                            android:layout_height="@dimen/_150sdp"
+                            android:indeterminateOnly="false"
+                            android:padding="@dimen/_12sdp"
+                            android:progress="70"
+                            android:progressDrawable="@drawable/circle" />
+
+                        <TextView
+                            android:id="@+id/text_view_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/colorPrimary_version"
+                            android:textSize="@dimen/_24ssp"
+                            app:font="@{`semibold`}"
+                            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+                            tools:text="60%" />
+                    </RelativeLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/rl_rev"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/rl_rev"
+                        app:layout_constraintTop_toTopOf="@+id/rl_rev">
 
                         <TextView
-                            android:id="@+id/tv_target_value"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_16sdp"
-                            android:background="@drawable/bg_grey_circle_border"
-                            android:gravity="center"
-                            android:text="45%"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_18ssp"
-                            app:font="@{`regular`}"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_total_sales" />
-
-                        <TextView
-                            android:id="@+id/tv_target"
+                            android:id="@+id/tv_revenue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_2sdp"
                             android:gravity="center"
-                            android:text="@string/target"
-                            android:textColor="@color/black"
+                            android:text="@string/revenue"
+                            android:textColor="@color/text_color"
                             android:textSize="@dimen/_14ssp"
                             app:font="@{`regular`}" />
+
+
+                        <TextView
+                            android:id="@+id/tv_revenue_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:gravity="center"
+                            android:text="Rs 6000"
+                            android:textColor="@color/colorPrimary_version"
+                            android:textSize="@dimen/_18ssp"
+                            app:font="@{`bold`}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/tv_revenue"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_revenue" />
+
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:id="@+id/lin_monthly_sale"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        app:layout_constraintTop_toBottomOf="@+id/rl_rev">
 
-                        <TextView
-                            android:id="@+id/tv_achieved_value"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_16sdp"
-                            android:background="@drawable/bg_grey_circle_border"
-                            android:gravity="center"
-                            android:text="45%"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_18ssp"
-                            app:font="@{`regular`}"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_total_sales" />
-
-                        <TextView
-                            android:id="@+id/tv_achieved"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_2sdp"
-                            android:gravity="center"
-                            android:text="@string/achieved"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_14ssp"
-                            app:font="@{`regular`}" />
-                    </LinearLayout>
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/tv_target_value"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_16sdp"
+                                android:background="@drawable/circle_filled_blue_gradient"
+                                android:gravity="center"
+                                android:text="45%"
+                                android:textColor="@color/blue_light"
+                                android:textSize="@dimen/_14ssp"
+                                app:font="@{`bold`}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_total_sales" />
 
-                        <TextView
-                            android:id="@+id/tv_remaining_value"
-                            android:layout_width="@dimen/_80sdp"
-                            android:layout_height="@dimen/_80sdp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_16sdp"
-                            android:background="@drawable/bg_grey_circle_border"
-                            android:gravity="center"
-                            android:text="45%"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_18ssp"
-                            app:font="@{`regular`}"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_total_sales" />
+                            <TextView
+                                android:id="@+id/tv_target"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="center"
+                                android:text="@string/target"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/_14ssp"
+                                app:font="@{`regular`}" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tv_remaining"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="@dimen/_2sdp"
-                            android:gravity="center"
-                            android:text="@string/remaining"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_14ssp"
-                            app:font="@{`regular`}" />
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_achieved_value"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_16sdp"
+                                android:background="@drawable/circle_filled_blue_gradient"
+                                android:gravity="center"
+                                android:text="45%"
+                                android:textColor="@color/blue_light"
+                                android:textSize="@dimen/_14ssp"
+                                app:font="@{`bold`}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_total_sales" />
+
+                            <TextView
+                                android:id="@+id/tv_achieved"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="center"
+                                android:text="@string/achieved"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/_14ssp"
+                                app:font="@{`regular`}" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_remaining_value"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_16sdp"
+                                android:background="@drawable/circle_filled_blue_gradient"
+                                android:gravity="center"
+                                android:text="45%"
+                                android:textColor="@color/blue_light"
+                                android:textSize="@dimen/_14ssp"
+                                app:font="@{`bold`}"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_total_sales" />
+
+                            <TextView
+                                android:id="@+id/tv_remaining"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="center"
+                                android:text="@string/remaining"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/_14ssp"
+                                app:font="@{`regular`}" />
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/tv_top_users"
@@ -453,10 +489,10 @@
                     app:font="@{`bold`}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lin_monthly_sale" />
+                    app:layout_constraintTop_toBottomOf="@+id/const_sale" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                  android:id="@+id/rvUser"
+                    android:id="@+id/rvUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"

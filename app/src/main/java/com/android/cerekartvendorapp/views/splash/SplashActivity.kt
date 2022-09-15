@@ -24,11 +24,12 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         mBinding = getViewDataBinding()
 
         Handler(Looper.getMainLooper()).postDelayed({
-           if(!DataManager.isUserLoggedIn())
-            startActivity(Intent(this, LoginActivity::class.java))
-           else
-               startActivity(Intent(this, LandingMainActivity::class.java))
+            if (!DataManager.isUserLoggedIn())
+                startActivity(Intent(this, LoginActivity::class.java))
+            else
+                startActivity(Intent(this, LandingMainActivity::class.java))
 
+            finish()
         }, 3000)
 
     }

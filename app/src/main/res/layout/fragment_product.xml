@@ -4,70 +4,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/_16sdp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_products"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:text="@string/products"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/_20ssp"
-        app:font="@{`bold`}"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_8sdp" />
 
-    <TextView
-        android:id="@+id/tv_products_catalouge"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:text="@string/products_catalouge"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_16ssp"
-        app:font="@{`regular`}"
-        android:layout_marginHorizontal="@dimen/_16sdp"
-        android:drawablePadding="@dimen/_10sdp"
-        android:drawableStart="@drawable/ic_nav_orders"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_products"/>
 
-    <TextView
-        android:id="@+id/tv_all_products"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:text="@string/all_products"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_16ssp"
-        app:font="@{`regular`}"
-        android:layout_marginHorizontal="@dimen/_16sdp"
-        android:drawablePadding="@dimen/_10sdp"
-        android:drawableStart="@drawable/ic_nav_orders"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_products_catalouge"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_8sdp" />
 
-    <TextView
-        android:id="@+id/tv_add_ons"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:text="@string/add_ons"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_16ssp"
-        app:font="@{`regular`}"
-        android:layout_marginHorizontal="@dimen/_16sdp"
-        android:drawablePadding="@dimen/_10sdp"
-        android:drawableStart="@drawable/ic_nav_orders"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_all_products"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs_container"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintEnd_toEndOf="@id/guide_end"
+            app:layout_constraintStart_toStartOf="@id/guide_begin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabGravity="fill"
+            app:tabIndicator="@android:color/transparent"
+            app:tabBackground="@drawable/tab_indicator_selector"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            android:background="@null"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabTextAppearance="@style/style_tab"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/text_color" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_product"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabs_container" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+

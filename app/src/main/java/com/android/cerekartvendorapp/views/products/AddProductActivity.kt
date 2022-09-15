@@ -16,7 +16,6 @@ import com.android.cerekartvendorapp.databinding.ActivityAddProductBinding
 import com.android.cerekartvendorapp.permissionhelper.PermissionHelper
 import com.android.cerekartvendorapp.utils.UtilsFunctions
 import com.android.cerekartvendorapp.viewmodel.AddProductViewModel
-import com.android.cerekartvendorapp.viewmodel.ForgotPasswordViewModel
 import com.android.cerekartvendorapp.views.base.BaseActivity
 import com.bumptech.glide.Glide
 import com.canhub.cropper.CropImageContract
@@ -80,7 +79,7 @@ class AddProductActivity : BaseActivity<ActivityAddProductBinding>(), View.OnCli
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         mBinding.spinnerMediaType.adapter = adapter
         mBinding.spinnerUnitType.adapter = adapter1
-        mBinding.switchStock?.setOnCheckedChangeListener({ _ , isChecked ->
+        mBinding.switchStock.setOnCheckedChangeListener({ _ , isChecked ->
             if(isChecked)
                mBinding.edtProductQuantity.visibility=View.VISIBLE
             else
@@ -138,7 +137,7 @@ class AddProductActivity : BaseActivity<ActivityAddProductBinding>(), View.OnCli
                 finish()
             }
             mBinding.btnSave -> {
-                mViewModel.isStockManagement = isStockManagement
+                mViewModel.isStockManagement = mBinding.switchStock.isChecked
                 if (mBinding.radioOne.isChecked)
                     mViewModel.itemType = 0
                 else if (mBinding.radioTwo.isChecked)
