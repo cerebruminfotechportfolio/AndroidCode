@@ -21,7 +21,7 @@ import com.android.cerekartvendorapp.viewmodel.ForgotPasswordViewModel
 import com.android.cerekartvendorapp.views.base.BaseFragment
 
 
-class AllProductListingFragment : BaseFragment<FragmentProductCatalougeListingBinding>(),
+class ProductAddOnsListingFragment : BaseFragment<FragmentProductCatalougeListingBinding>(),
     View.OnClickListener,
     PopupMenuClick, AdapterItemClickCallback, ProductFilterAdapter.ClickListener {
     private var itemSort: String = ""

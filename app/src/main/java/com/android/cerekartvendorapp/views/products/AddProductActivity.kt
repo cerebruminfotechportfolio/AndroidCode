@@ -6,7 +6,10 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.android.cerekartvendorapp.R
 import com.android.cerekartvendorapp.constants.IntentConstant
@@ -67,12 +70,14 @@ class AddProductActivity : BaseActivity<ActivityAddProductBinding>(), View.OnCli
     private fun setUpData() {
         permissionHelper = PermissionHelper()
         mBinding.topView.imgeNavigation.setImageResource(R.drawable.ic_profile_back)
+        mBinding.topView.txtTitle.setText(getString(R.string.add_product))
+        mBinding.topView.imgLogo.visibility = View.GONE
         if (!isStockManagement) {
             mBinding.constStock.visibility = View.GONE
             mBinding.edtProductQuantity.visibility = View.GONE
         }
         val list = resources.getStringArray(R.array.product_tax).toList()
-        val listUnit = resources.getStringArray(R.array.product_tax).toList()
+        val listUnit = resources.getStringArray(R.array.product_unit_type).toList()
         val adapter = ArrayAdapter(this, R.layout.layout_spinner_item, list)
         val adapter1 = ArrayAdapter(this, R.layout.layout_spinner_item, listUnit)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -86,6 +91,23 @@ class AddProductActivity : BaseActivity<ActivityAddProductBinding>(), View.OnCli
                 mBinding.edtProductQuantity.visibility=View.GONE
 
         })
+
+        mBinding.spinnerUnitType.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if(position==0){
+                    (view as TextView).setTextColor(ContextCompat.getColor(this@AddProductActivity,R.color.color_9e9e9e))
+                }
+            }
+
+        }
 
     }
 

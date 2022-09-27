@@ -116,7 +116,7 @@
                     android:id="@+id/rel_upload"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_200sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:background="@drawable/bg_white_semi_round"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintStart_toStartOf="@id/guide_begin"
@@ -158,7 +158,7 @@
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     android:layout_marginHorizontal="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
                     app:layout_constraintTop_toBottomOf="@+id/rel_upload"/>
 
 

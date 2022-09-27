@@ -59,7 +59,7 @@
                 android:padding="@dimen/_8sdp"
                 android:visibility="gone"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/ic_header_logo" />
+                android:src="@drawable/ic_add_circle_white" />
 
 
         </RelativeLayout>

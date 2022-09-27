@@ -7,6 +7,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import com.android.cerekartvendorapp.R
 import com.android.cerekartvendorapp.constants.PermissionConstants
@@ -59,7 +60,8 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
         mBinding.topView.imgeNavigation.setImageResource(R.drawable.ic_profile_back)
         mBinding.topView.imgAdd.setImageResource(R.drawable.ic_add_circle_white)
         mBinding.topView.txtTitle.setText(getString(R.string.add_category))
-        mBinding.topView.imgAdd.visibility=View.VISIBLE
+        mBinding.topView.imgAdd.visibility = View.VISIBLE
+        mBinding.topView.imgLogo.visibility = View.GONE
     }
 
     private fun addNewView() {
@@ -89,12 +91,20 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
         mBinding.tvUploadImage.setOnClickListener(this)
         mBinding.linColour.setOnClickListener(this)
         permissionHelper.setListener(this)
+        mBinding.btnSave.setOnClickListener(this)
     }
+
 
     override fun onClick(p0: View?) {
         when (p0) {
             mBinding.topView.imgeNavigation -> {
                 finish()
+            }
+            mBinding.btnSave -> {
+                if(checkValidation() && sameCategoryName())
+                {
+
+                }
             }
             mBinding.linColour -> {
                 selectColour()
@@ -173,9 +183,16 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
             val imageurl = result.uriContent
             imageurl?.let {
                 val path = result.getUriFilePath(this, true)
-                mBinding.tvUploadImage.visibility = View.GONE
-                mBinding.ivCat.visibility = View.VISIBLE
-                Glide.with(this).load(path).into(mBinding.ivCat)
+                path?.let {
+                    if (UtilsFunctions.fileSize(it, 1)) {
+                        showToastShort(getString(R.string.valid_cat_image_size))
+                        return@let
+                    }
+                    mBinding.tvUploadImage.visibility = View.GONE
+                    mBinding.ivCat.visibility = View.VISIBLE
+                    Glide.with(this).load(it).into(mBinding.ivCat)
+                }
+
             }
 
         }
@@ -225,5 +242,66 @@ class AddSubCategoryActivity : BaseActivity<ActivityAddSubCategoryBinding>(), Vi
             .attachBrightnessSlideBar(true) // the default value is true.
             .setBottomSpace(12) // set a bottom space between the last slidebar and buttons.
             .show()
+    }
+
+    private fun checkValidation(): Boolean {
+        if (mBinding.edtCategoryName.text.toString().isEmpty()) {
+            mBinding.edtCategoryName.setError(getString(R.string.field_required))
+            mBinding.edtCategoryName.requestFocus()
+
+        } else if (mBinding.edtCategoryName.text.toString().length < 2) {
+            mBinding.edtCategoryName.setError(getString(R.string.image_name_length))
+            mBinding.edtCategoryName.requestFocus()
+        } else {
+            val mainCatName = mBinding.edtCategoryName.text.toString()
+            for (i in 0 until mBinding.parentLinearLayout.childCount) {
+                val v = mBinding.parentLinearLayout.getChildAt(i)
+                val edtCatName: EditText = v.findViewById(R.id.edt_category_name)
+                val catName = edtCatName.text.toString()
+                if (catName.trim().isEmpty()) {
+                    showToastShort("Please enter categories in all the fields. ")
+                    return false
+                }
+                if (mainCatName.trim().equals(catName.trim(), true)) {
+                    showToastShort("All categories should be different.")
+                    return false
+                }
+                for (j in i + 1 until mBinding.parentLinearLayout.childCount) {
+                    val view1 = mBinding.parentLinearLayout.getChildAt(j)
+                    val edtCatName1: EditText = view1.findViewById(R.id.edt_category_name)
+                    val catName1 = edtCatName1.text.toString()
+
+                    if (catName.trim().equals(catName1.trim(), true)) {
+                        showToastShort("All categories should be different.")
+                        return false
+                    }
+
+
+                }
+            }
+        }
+        return true
+    }
+
+    private fun sameCategoryName(): Boolean {
+        for (i in 0 until mBinding.parentLinearLayout.childCount) {
+            val v = mBinding.parentLinearLayout.getChildAt(i)
+            val edtCatName: EditText = v.findViewById(R.id.edt_category_name)
+            val catName = edtCatName.text.toString()
+            for (j in i + 1 until mBinding.parentLinearLayout.childCount) {
+                val view1 = mBinding.parentLinearLayout.getChildAt(j)
+                val edtCatName1: EditText = view1.findViewById(R.id.edt_category_name)
+                val catName1 = edtCatName1.text.toString()
+
+                if (catName.trim().equals(catName1.trim(), true)) {
+                    showToastShort("All categories should be different.")
+                    return false
+                }
+
+
+            }
+
+        }
+        return true
     }
 }

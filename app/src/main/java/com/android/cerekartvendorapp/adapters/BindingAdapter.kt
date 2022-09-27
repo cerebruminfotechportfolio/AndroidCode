@@ -111,13 +111,13 @@ object BindingAdapter {
                         cal.set(Calendar.MONTH,month)
                         cal.set(Calendar.DAY_OF_MONTH,day)
                         cal.set(Calendar.YEAR,year)
-                        tvDate.text = SimpleDateFormat(format,Locale.getDefault()).format(cal.time)
+                        tvDate.text = SimpleDateFormat(format,Locale.US).format(cal.time)
                     },
                     Calendar.getInstance().get(Calendar.YEAR),
                     Calendar.getInstance().get(Calendar.MONTH),
                     Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
                 )
-           // datePickerDialog.datePicker.minDate = Calendar.getInstance().timeInMillis
+            datePickerDialog.datePicker.minDate = Calendar.getInstance().timeInMillis
             datePickerDialog.show()
         }
 

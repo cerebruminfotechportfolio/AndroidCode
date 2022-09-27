@@ -318,6 +318,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/viewmodel/AddSubProductViewModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/viewmodel/BaseViewModel.kt">
           <value>
             <set />
@@ -428,6 +433,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/ProductDetailActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/android/cerekartvendorapp/views/products/ProductsFragment.kt">
           <value>
             <set />
@@ -509,6 +519,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/drawable/ic_filled_star.xml">
           <value>
             <set />
           </value>
@@ -698,6 +713,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/layout_spinner_item_add_product.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/layout_spinner_item_tax.xml">
           <value>
             <set />
@@ -763,6 +783,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../Real-Time_Face_Recognition_Android-master/.gradle/caches/transforms-2/files-2.1/bc192d66d51f047b995e90ab487e6116/jetified-firebase-auth-19.2.0/jars/classes.jar!/com/google/firebase/auth/PhoneAuthProvider.class">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/app/build.gradle">
           <value>
             <set />
@@ -778,7 +803,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/app/src/main/java/com/groceriesking/customer/views/settings/MyAccountsActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/app/src/main/res/layouts/activities/layout/activity_landing.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../groceriesking-customer-android/groceriesking-customer-android/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/Tracket/app/src/main/java/com/tracket/views/boatProfile/CreateBoatProfileTwoActivity.kt">
           <value>
             <set />
           </value>
@@ -798,12 +838,32 @@
             <set />
           </value>
         </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/java/com/example/homeservices/model/cart/CartListResponse.kt">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/java/com/example/homeservices/views/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/java/com/example/homeservices/views/authentication/OTPVerificationActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/java/com/example/homeservices/views/home/DashboardActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/java/com/example/homeservices/views/home/LandingHomeFragment.kt">
           <value>
             <set />
           </value>
@@ -814,6 +874,11 @@
           </value>
         </entry>
         <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/app/src/main/res/layouts/activities/layout/common_toolbar.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="D:/PoojaBackup/studioworkspace/android-customer-app/build.gradle">
           <value>
             <set />
           </value>

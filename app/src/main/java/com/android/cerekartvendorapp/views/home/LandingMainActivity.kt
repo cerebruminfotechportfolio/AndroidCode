@@ -15,12 +15,14 @@ import com.android.cerekartvendorapp.views.authentication.LoginActivity
 import com.android.cerekartvendorapp.views.base.BaseActivity
 import com.android.cerekartvendorapp.views.coupons.OfferFragment
 import com.android.cerekartvendorapp.views.gallery.GalleryFragment
+import com.android.cerekartvendorapp.views.products.AddProductActivity
 import com.android.cerekartvendorapp.views.products.ProductsFragment
 import com.bumptech.glide.Glide
 import com.google.android.material.navigation.NavigationView
 
 
 class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClickListener {
+    private var productTabPos: Int=0
     private var navigationView: NavigationView? = null
     private var drawer: DrawerLayout? = null
     var fragment: Fragment? = null
@@ -45,6 +47,7 @@ class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClick
         mBinding.imgNavCancel.setOnClickListener(this)
         mBinding.linLogout.setOnClickListener(this)
         mBinding.topView.imgeNavigation.setOnClickListener(this)
+        mBinding.topView.imgAdd.setOnClickListener(this)
     }
 
 
@@ -75,6 +78,13 @@ class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClick
 
     override fun onClick(p0: View?) {
         when (p0) {
+            mBinding.topView.imgAdd->
+            {
+                when(productTabPos)
+                {
+                    1->startActivity(Intent(this,AddProductActivity::class.java))
+                }
+            }
             mBinding.imgNavCancel, mBinding.topView.imgeNavigation -> {
                 openCloseDrawer()
 
@@ -135,9 +145,14 @@ class LandingMainActivity : BaseActivity<ActivityLandingBinding>(), View.OnClick
         }
     }
 
-    fun setUpToolbar(name: String) {
+    fun setUpToolbar(name: String,show:Boolean=false,pos:Int=0) {
+        productTabPos=pos
         mBinding.topView.txtTitle.visibility=View.VISIBLE
         mBinding.topView.txtTitle.text=name
         mBinding.topView.imgLogo.visibility=View.GONE
+        mBinding.topView.imgAdd.visibility=View.GONE
+        if(show)
+            mBinding.topView.imgAdd.visibility=View.VISIBLE
+
     }
 }

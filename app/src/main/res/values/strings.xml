@@ -10,7 +10,7 @@
     <string name="please_enter_prod_quantity">Please enter quantity</string>
     <string name="please_enter_prod_name">Please enter name</string>
     <string name="field_required">This field is required</string>
-    <string name="image_name_length">Please enter aatleast 2 characters</string>
+    <string name="image_name_length">Please enter atleast 2 characters</string>
     <string name="image_desc_name_length">Description should be minimum of 40 characters</string>
     <!-- <string name="please_enter_password_valid">Please enter password with 8&#8211;16 characters, one upper case, one lower case letter, one special character and one number.</string>-->
     <string name="please_enter_password_valid">Password length must be 8&#8211;16</string>
@@ -74,7 +74,7 @@
     <string name="delete">Delete</string>
     <string name="all_products">All Products</string>
     <string name="category">Category</string>
-    <string name="sort">Sort</string>
+    <string name="sort">Sort By</string>
     <string name="item_type">Item Type</string>
     <string name="apply_tax">Apply Tax</string>
     <string name="add_photos_videos"><![CDATA[Add Photos & Videos]]></string>
@@ -111,5 +111,9 @@
     <string name="description">Description</string>
     <string name="active">Active</string>
     <string name="add_category">Add Category</string>
+    <string name="food_delivery" />
+    <string name="valid_cat_image_size">The file size is too big (1M max).</string>
+    <string name="add_to_wishlist">Add To Wishlist</string>
+    <string name="add_to_cart">Add To Cart</string>
 
 </resources>

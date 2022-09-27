@@ -61,6 +61,7 @@
             android:exported="false"/>
         <activity android:name=".views.products.AddProductActivity"
             android:exported="false"/>
+        <activity android:name=".views.products.ProductDetailActivity" android:exported="false"/>
     </application>
 
 </manifest>

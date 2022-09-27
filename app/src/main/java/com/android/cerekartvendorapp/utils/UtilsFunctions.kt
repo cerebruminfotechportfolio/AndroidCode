@@ -55,6 +55,7 @@ object UtilsFunctions {
             ), PermissionConstants.REQ_GALLERY
         )
     }
+
     @JvmStatic
     fun onGalleryJustVideoChoose(context: Activity) {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
@@ -62,9 +63,17 @@ object UtilsFunctions {
         context.startActivityForResult(
             Intent.createChooser(
                 intent,
-                context. resources.getString(R.string.image_action)
+                context.resources.getString(R.string.image_action)
             ), PermissionConstants.REQ_VIDEO
         )
+    }
+
+    @JvmStatic
+    fun fileSize(path: String,size:Int): Boolean {
+        val imageFile = File(path)
+        val size = imageFile.length() / 1024f
+        val sizeMb: Float = size / 1024f
+        return sizeMb > size
     }
 
     @JvmStatic
@@ -157,18 +166,18 @@ object UtilsFunctions {
         val tvOptionTwo = layout.findViewById<TextView>(R.id.tv_add_tax)
         var popPos = -1
 
-        switchStock?.setOnCheckedChangeListener({ _ , isChecked ->
-           if(isChecked)
-               switchAvail.isChecked=false
+        switchStock?.setOnCheckedChangeListener({ _, isChecked ->
+            if (isChecked)
+                switchAvail.isChecked = false
             else
-                switchAvail.isChecked=true
+                switchAvail.isChecked = true
         })
 
-        switchAvail?.setOnCheckedChangeListener({ _ , isChecked ->
-            if(isChecked)
-                switchStock.isChecked=false
+        switchAvail?.setOnCheckedChangeListener({ _, isChecked ->
+            if (isChecked)
+                switchStock.isChecked = false
             else
-                switchStock.isChecked=true
+                switchStock.isChecked = true
         })
         tvOptionOne.setOnClickListener {
             popup.dismiss()
@@ -221,7 +230,7 @@ object UtilsFunctions {
         val tvOptionfour = layout.findViewById<TextView>(R.id.tv_delete)
         var popPos = -1
         if (fromProduct) {
-          tvOptionOne.visibility=View.GONE
+            tvOptionOne.visibility = View.GONE
         }
         tvOptionOne.setOnClickListener {
             popup.dismiss()

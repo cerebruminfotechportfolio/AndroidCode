@@ -17,7 +17,8 @@
     <color name="colorPrimaryLight">#6F07595D</color>
     <color name="colorAccent">#07595D</color>
     <color name="blue">#3374DA</color>
-    <color name="bg_color">#FAFAFA</color>
+    <color name="bg_color">#F5F5F5</color>
+    <color name="color_fafafa">#FAFAFA</color>
     <color name="color_bdbdbd">#BDBDBD</color>
     <color name="color_ededed">#EDEDED</color>
     <color name="text_color">#212121</color>

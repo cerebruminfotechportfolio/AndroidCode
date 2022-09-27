@@ -15,63 +15,76 @@
             android:id="@+id/iv_profile"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/ic_nav_orders"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/lin_name"
+            app:layout_constraintBottom_toBottomOf="@+id/lin_name"/>
+
+
 
         <LinearLayout
             android:id="@+id/lin_name"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
             android:layout_marginStart="@dimen/_16sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_profile"
-            app:layout_constraintTop_toTopOf="@+id/iv_profile">
+            app:layout_constraintTop_toTopOf="parent">
 
 
-
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1.9"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <TextView
                     android:id="@+id/tv_money"
-                    android:layout_width="0dp"
-                    android:layout_weight="1.9"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    tools:text="@string/money_spent"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_16ssp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="dsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsd"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_14ssp"
                     app:font="@{`bold`}" />
+
+                <RatingBar
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:id="@+id/rating"
+                    android:rating="2"
+                    android:progressTint="@color/color_secondary"
+                    android:stepSize="1"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lin_name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_14ssp"
+                    app:font="@{`semibold`}"
+                    tools:text="Rs.30"
+                    app:layout_constraintStart_toStartOf="@id/rating"
+                    app:layout_constraintEnd_toEndOf="@+id/rating"
+                    app:layout_constraintTop_toBottomOf="@+id/rating"/>
+
+            </LinearLayout>
 
                <ImageView
                    android:id="@+id/ivsetting"
                    android:padding="@dimen/_8sdp"
-                   android:layout_gravity="end"
+                   android:layout_gravity="center_vertical"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:src="@drawable/ic_settings"/>
 
         </LinearLayout>
 
-        <RatingBar
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:id="@+id/rating"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lin_name" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp"
-            app:font="@{`regular`}"
-            tools:text="Rs.30"
-            app:layout_constraintStart_toStartOf="@id/rating"
-            app:layout_constraintEnd_toEndOf="@+id/rating"
-            app:layout_constraintTop_toBottomOf="@+id/rating"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout></layout>

@@ -13,47 +13,81 @@
         android:layout_width="@dimen/_130sdp"
         android:layout_height="wrap_content"
         android:text="@string/add_product"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/poppins_regular"
         android:textSize="@dimen/_14ssp"
+        android:drawableStart="@drawable/ic_add_circle"
+        android:drawablePadding="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_2sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_add_product"
+        android:layout_marginVertical="@dimen/_16sdp"
+        android:background="@color/color_e9e9e9"/>
 
     <TextView
         android:id="@+id/tv_edit"
         android:layout_width="@dimen/_130sdp"
         android:layout_height="wrap_content"
         android:text="@string/edit"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/poppins_regular"
+        android:drawableStart="@drawable/ic_edit"
+        android:drawablePadding="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginTop="@dimen/_12sdp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_add_product"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_edit"
+        android:layout_marginVertical="@dimen/_16sdp"
+        android:background="@color/color_e9e9e9"/>
     <TextView
         android:id="@+id/tv_disable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/disable"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/_14ssp"
         android:gravity="center"
+        android:drawableStart="@drawable/ic_disable"
+        android:drawablePadding="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginTop="@dimen/_12sdp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_edit"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_disable"
+        android:layout_marginVertical="@dimen/_16sdp"
+        android:background="@color/color_e9e9e9"/>
 
     <TextView
         android:id="@+id/tv_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/delete"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="@dimen/_14ssp"
+        android:drawableStart="@drawable/ic_del"
+        android:drawablePadding="@dimen/_16sdp"
         android:gravity="center"
         android:layout_marginStart="@dimen/_2sdp"
-        android:layout_marginTop="@dimen/_12sdp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_disable"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/view3"
         app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

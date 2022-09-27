@@ -53,8 +53,14 @@ class SubCategoryProductListingActivity : BaseActivity<FragmentProductCatalougeL
             adapter = mAdapter
         }
     }
+
     private fun setUpData() {
         mBinding.topView.imgeNavigation.setImageResource(R.drawable.ic_profile_back)
+        mBinding.topView.imgAdd.setImageResource(R.drawable.ic_add_circle_white)
+        mBinding.topView.txtTitle.setText(getString(R.string.food_delivery))
+        mBinding.topView.imgAdd.visibility=View.VISIBLE
+        mBinding.topView.main.visibility=View.VISIBLE
+        mBinding.topView.imgLogo.visibility=View.GONE
     }
 
 

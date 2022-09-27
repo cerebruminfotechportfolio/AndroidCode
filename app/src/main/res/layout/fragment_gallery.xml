@@ -51,7 +51,7 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs_container"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         app:layout_constraintEnd_toEndOf="@id/guide_end"
         app:layout_constraintStart_toStartOf="@id/guide_begin"

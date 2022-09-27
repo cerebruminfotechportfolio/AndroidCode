@@ -18,6 +18,8 @@
             android:hint="@string/category_name"
             android:padding="@dimen/_16sdp"
             app:font="@{`regular`}"
+            android:maxLength="100"
+            android:inputType="textCapSentences"
             app:layout_constraintEnd_toStartOf="@+id/iv_del"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

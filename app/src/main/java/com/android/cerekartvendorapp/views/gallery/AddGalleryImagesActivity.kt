@@ -142,9 +142,12 @@ class AddGalleryImagesActivity : BaseActivity<ActivityAddGalleryImagesBinding>()
                         val imageurl: Uri = data.data!!
                         val path = FileUtils.getRealPathFromURI(this, imageurl)
                         path?.let {
-                            {
 
-                            }
+                             Glide.with(this).load(imageurl).thumbnail(0.1f)
+                                 .into(mBinding.ivCat)
+                                mBinding.tvUploadImage.visibility = View.GONE
+                                mBinding.ivCat.visibility = View.VISIBLE
+
                         }
 
                     }

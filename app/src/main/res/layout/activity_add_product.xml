@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <data>
     <variable
+        name="constant"
+        type="com.android.cerekartvendorapp.constants.DateConstants" />
+    <variable
         name="model"
         type="com.android.cerekartvendorapp.viewmodel.AddProductViewModel" />
 </data>
@@ -46,31 +49,7 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_end="@dimen/_16sdp" />
 
-                <TextView
-                    android:id="@+id/tv_products"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:text="@string/add_product"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_24ssp"
-                    app:font="@{`bold`}"
-                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
-                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
-                    app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tv_general"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:text="@string/bread"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/_18ssp"
-                    app:font="@{`bold`}"
-                    app:layout_constraintEnd_toEndOf="@+id/guide_end"
-                    app:layout_constraintStart_toStartOf="@+id/guide_begin"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_products" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/const_stock"
@@ -79,7 +58,7 @@
                     android:layout_marginTop="@dimen/_16sdp"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_general">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/switch_stock"
@@ -104,10 +83,10 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_product_quantity"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                   android:visibility="gone"
+                    android:visibility="gone"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:hint="@string/product_quantity"
                     android:inputType="number"
@@ -123,8 +102,9 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_product_name"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
+                    android:backgroundTint="@color/color_fafafa"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:hint="@string/product_name"
@@ -147,8 +127,8 @@
                     android:layout_marginTop="@dimen/_16sdp"
                     android:text="@string/item_type"
                     android:textColor="@color/text_color"
-                    android:textSize="@dimen/_16ssp"
-                    app:font="@{`regular`}"
+                    android:textSize="@dimen/_14ssp"
+                    app:font="@{`semibold`}"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@+id/edt_product_name" />
@@ -170,7 +150,7 @@
                         android:layout_weight="1"
                         android:text="@string/veg"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_12ssp"
                         app:font="@{`regular`}" />
 
                     <RadioButton
@@ -181,7 +161,7 @@
                         android:layout_weight="1"
                         android:text="@string/non_veg"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_12ssp"
                         app:font="@{`regular`}" />
 
                 </RadioGroup>
@@ -189,7 +169,7 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_desc"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
@@ -210,8 +190,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
-                    android:background="@drawable/edittext_round_background"
+                    android:background="@drawable/bg_white_semi_round"
                     android:padding="@dimen/_16sdp"
+                    android:backgroundTint="@color/color_fafafa"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@+id/edt_desc">
@@ -220,14 +201,15 @@
                         android:id="@+id/spinner_unit_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/black" />
+                        android:backgroundTint="@color/color_e9e9e9" />
                 </RelativeLayout>
 
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_duration"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
+                    android:backgroundTint="@color/color_fafafa"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:hint="@string/duration"
@@ -244,11 +226,13 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_price"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:hint="@string/price"
+                    android:backgroundTint="@color/color_fafafa"
+
                     android:text="@={model.mPrice}"
                     android:inputType="number"
                     android:maxLength="9"
@@ -263,13 +247,15 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_included_service"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:gravity="top"
                     android:hint="@string/included_services"
                     android:lines="4"
+                    android:backgroundTint="@color/color_fafafa"
+
                     android:maxLength="250"
                     android:nextFocusForward="@id/edt_excluded_service"
                     android:padding="@dimen/_16sdp"
@@ -281,7 +267,7 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_excluded_service"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
@@ -289,6 +275,8 @@
                     android:hint="@string/excluded_services"
                     android:imeOptions="actionDone"
                     android:lines="4"
+                    android:backgroundTint="@color/color_fafafa"
+
                     android:maxLength="250"
                     android:padding="@dimen/_16sdp"
                     app:font="@{`regular`}"
@@ -303,8 +291,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:text="@string/product_image"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_14ssp"
                     app:font="@{`bold`}"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
@@ -315,7 +303,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_200sdp"
                     android:layout_marginTop="@dimen/_8sdp"
-                    android:background="@drawable/edittext_round_background"
+                    android:background="@drawable/bg_white_semi_round"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintStart_toStartOf="@id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@+id/tv_media_info">
@@ -325,12 +313,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:drawableTop="@drawable/ic_settings"
+                        android:drawableTop="@drawable/ic_upload"
                         android:drawablePadding="@dimen/_10sdp"
                         android:gravity="center"
-                        android:text="@string/upload"
-                        android:textColor="@color/text_color"
-                        android:textSize="@dimen/_16ssp" />
+                        android:text="@string/upload_image"
+                        app:font="@{`medium`}"
+                        android:textColor="@color/color_9e9e9e"
+                        android:textSize="@dimen/_14ssp" />
 
                     <ImageView
                         android:id="@+id/iv_cat"
@@ -346,8 +335,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:text="@string/offer_description"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_14ssp"
                     app:font="@{`bold`}"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
@@ -356,11 +345,13 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_offer_perc"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:hint="@string/offer"
+                    android:backgroundTint="@color/color_fafafa"
+
                     android:inputType="numberDecimal"
                     android:maxLength="9"
                     android:maxLines="1"
@@ -373,7 +364,7 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_offer_name"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
@@ -384,6 +375,7 @@
                     android:maxLines="1"
                     android:padding="@dimen/_16sdp"
                     app:font="@{`regular`}"
+                    android:backgroundTint="@color/color_fafafa"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintStart_toStartOf="@id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@+id/edt_offer_perc" />
@@ -391,13 +383,15 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_offer_expiry"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:hint="@string/offer_expiry"
                     android:padding="@dimen/_16sdp"
                     app:font="@{`regular`}"
+                    app:datePicker="@{constant.DD_MM_YY}"
+                    android:backgroundTint="@color/color_fafafa"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintStart_toStartOf="@id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@+id/edt_offer_name" />
@@ -405,11 +399,12 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_net_price"
-                    style="@style/EditTextBackground"
+                    style="@style/EditTextBackground2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:hint="@string/net_price"
+                    android:backgroundTint="@color/color_fafafa"
                     android:imeOptions="actionDone"
                     android:inputType="number"
                     android:maxLength="9"
@@ -427,8 +422,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:text="@string/tax"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18ssp"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_14ssp"
                     app:font="@{`bold`}"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
@@ -440,17 +435,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:padding="@dimen/_10sdp"
+                    android:backgroundTint="@color/color_fafafa"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintEnd_toEndOf="@id/guide_end"
                     app:layout_constraintTop_toBottomOf="@+id/tv_tax"
-                    android:background="@drawable/edittext_round_background">
+                    android:background="@drawable/bg_white_semi_round">
 
                     <androidx.appcompat.widget.AppCompatSpinner
                         android:id="@+id/spinner_media_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/product_tax"
-                        android:backgroundTint="@color/black" />
+                        android:backgroundTint="@color/color_e9e9e9" />
                 </RelativeLayout>
 
                 <TextView
@@ -458,10 +454,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@string/this_tax_will_be_included_once_you_checkout"
-                    android:textColor="@color/color_858585"
+                    android:textColor="@color/color_9e9e9e"
                     android:textSize="@dimen/_10ssp"
                     app:font="@{`regular`}"
-                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
                     app:layout_constraintTop_toBottomOf="@id/rl_tax" />
@@ -474,10 +470,11 @@
                     android:layout_marginTop="@dimen/_20sdp"
                     android:background="@drawable/bg_btn_dark_primary"
                     android:gravity="center"
+                    android:backgroundTint="@color/color_secondary"
                     android:padding="@dimen/_16sdp"
                     android:text="@string/save"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_18ssp"
+                    android:textSize="@dimen/_14ssp"
                     app:font="@{`bold`}"
                     app:layout_constraintEnd_toEndOf="@+id/guide_end"
                     app:layout_constraintStart_toStartOf="@+id/guide_begin"
