@@ -73,13 +73,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
         calEnd.set(Calendar.MONTH, dates.get(dates.size - 1).month + 1)
         calEnd.set(Calendar.YEAR, dates.get(dates.size - 1).year)
 
-        mBinding.tvSelectDate.text = UtilsFunctions.getStringDate(
-            calStart.timeInMillis,
-            DateConstants.DD_MM_YY
-        ) + "-" + UtilsFunctions.getStringDate(
-            calEnd.timeInMillis,
-            DateConstants.DD_MM_YY
-        )
     }
 
 
